@@ -1,0 +1,209 @@
+[
+	{
+		"name": "Bomb",
+		"category": "bomb",
+		"timeLimit": 6,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Neutral Bomb",
+		"category": "bomb",
+		"timeLimit": 6,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Search and Destroy",
+		"category": "bomb",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Weapons Cache (Double Bomb)",
+		"category": "bomb",
+		"timeLimit": 6,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Conquest",
+		"category": "control_points",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Bunker Hill",
+		"category": "control_points",
+		"timeLimit": 10,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Domination",
+		"category": "control_points",
+		"timeLimit": 15,
+		"swapSides": false,
+		"difficulty": "low",
+		"idealPlayers": 40,
+		"experimental": false
+	},
+	{
+		"name": "King of the Hill",
+		"category": "control_points",
+		"timeLimit": 15,
+		"swapSides": false,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Triangle of Death",
+		"category": "control_points",
+		"timeLimit": 10,
+		"swapSides": false,
+		"difficulty": "low",
+		"idealPlayers": 15,
+		"experimental": false
+	},
+	{
+		"name": "Signal Flare (ET Phone Home)",
+		"category": "control_points",
+		"timeLimit": 10,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Manhunt",
+		"category": "elimination",
+		"timeLimit": 4,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 40,
+		"experimental": false
+	},
+	{
+		"name": "Siege",
+		"category": "elimination",
+		"timeLimit": 3,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Double Extraction",
+		"category": "extraction",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 40,
+		"experimental": false
+	},
+	{
+		"name": "Rescue Richie",
+		"category": "extraction",
+		"timeLimit": 4,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Rescue Roy",
+		"category": "extraction",
+		"timeLimit": 4,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Black Hawk Down",
+		"category": "hybrid",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "high",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Capture the Flag",
+		"category": "recovery",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Infiltration",
+		"category": "recovery",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Infiltration",
+		"category": "recovery",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Salvage",
+		"category": "recovery",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Jailbreak",
+		"category": "elimination",
+		"timeLimit": 10,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": true
+	},
+	{
+		"name": "9-Line",
+		"category": "extraction",
+		"timeLimit": 6,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": true
+	},
+	{
+		"name": "Dead Drop",
+		"category": "recovery",
+		"timeLimit": 6,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": true
+	}
+]
