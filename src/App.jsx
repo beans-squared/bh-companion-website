@@ -50,7 +50,6 @@ export default function App() {
 		console.dir('Generated playlist', gameList);
 
 		setPlaylist(gameList);
-		console.log(playlist);
 	}
 
 	function chooseGames(
@@ -65,29 +64,30 @@ export default function App() {
 	) {
 		// Filter for remaining time in session
 		games = games.filter((game) => {
+			const INITIAL_BRIEFING_TIME = 4;
+			const SWAP_BRIEFING_TIME = 2;
+
+			const gameTime =
+				game.timeLimit +
+				(game.swapSides ? game.timeLimit + SWAP_BRIEFING_TIME : 0) +
+				INITIAL_BRIEFING_TIME;
 			// (Game's maximum time) + if the game swaps sides (game's maximum time + 2) + (4) for briefing time
-			return (
-				game.timeLimit + (game.swapSides ? game.timeLimit + 2 : 0) + 4 <
-				remainingMinutes
-			);
+			return gameTime < remainingMinutes;
 		});
-		console.log('Remaining time filter', games);
 
 		// Filter for experimental games
 		if (!allowExperimental) games = games.filter((game) => !game.experimental);
-		console.log('Experimental filter', games);
 
 		// Filter for number of players
-		// will take game's ideal player count and set min as ideal-10, min 2 and max as ideal+10, max 60
+		// will take game's ideal player count and set min as ideal-15, min 2 and max as ideal+15, max 60
 		games = games.filter((game) => {
-			let min = game.idealPlayers - 10;
+			let min = game.idealPlayers - 15;
 			if (min < 2) min = 2;
-			let max = game.idealPlayers + 10;
+			let max = game.idealPlayers + 15;
 			if (max > 60) max = 60;
 
 			return players >= min && players <= max;
 		});
-		console.log('Number of players filter', games);
 
 		// Filter for appropriate difficulty
 		// Youth = 0, Teens = 1, Adults = 2
@@ -96,15 +96,15 @@ export default function App() {
 		// 0-1 Low, 2-3 Medium, 4-5 Hard
 		games = games.filter((game) => {
 			const diffVal = age + experience;
+			console.log('Difficulty value for group:', diffVal);
 			if (diffVal === 0 || diffVal === 1) {
-				return game.difficulty !== 'low';
+				return game.difficulty === 'low';
 			} else if (diffVal === 2 || diffVal === 3) {
-				return game.difficulty !== 'medium';
+				return game.difficulty === 'low' || game.difficulty === 'medium';
 			} else {
-				return game.difficulty !== 'high';
+				return game.difficulty === 'medium' || game.difficulty === 'high';
 			}
 		});
-		console.log('Difficulty filter', games);
 
 		// Filter for duplicate categories
 		let filteredGames = games;
@@ -117,23 +117,14 @@ export default function App() {
 			chosenCategories = [];
 		}
 		games = filteredGames;
-		console.log('Duplicate category filter', games);
 
 		if (games.length === 0) return chosenGames;
 		const rand = Math.floor(Math.random() * games.length);
-		console.log('RAND', rand);
 		const selectedGame = games[rand];
-		console.log('Selected game:', selectedGame.name);
-		console.log('Chosen games:', chosenGames);
-
 		games = games.filter((game) => game.name !== selectedGame.name);
 
 		chosenGames.push(selectedGame);
 		chosenCategories.push(selectedGame.category);
-
-		console.log(
-			'--------------------------------------------------------------------------------'
-		);
 
 		return chooseGames(
 			remainingMinutes -
@@ -153,40 +144,63 @@ export default function App() {
 	return (
 		<div className="App">
 			<div>
-				<h1>How long is the session?</h1>
-				{sessionLength ? <h2>Selected: {sessionLength}</h2> : <></>}
+				<h2>How long is the session?</h2>
+				{sessionLength ? (
+					<h3>Selected: {sessionLength === 1 ? `1 hour` : `1.75 hours`}</h3>
+				) : (
+					<></>
+				)}
 				<button onClick={() => setSessionLength(1)}>1 hour</button>
 				<button onClick={() => setSessionLength(1.75)}>1.75 hours</button>
 			</div>
 			<div>
-				<h1>How many players are in the session?</h1>
-				{players ? <h2>Entered: {players} players</h2> : <></>}
+				<h2>How many players are in the session?</h2>
+				{players ? <h3>Entered: {players} players</h3> : <></>}
 				<input
 					type="number"
 					onChange={(event) => setPlayers(event.target.valueAsNumber)}
 				/>
 			</div>
 			<div>
-				<h1>What is the average age of the players in the session?</h1>
-				{age !== null ? <h2>Selected: {age}</h2> : <></>}
+				<h2>What is the average age of the players in the session?</h2>
+				{age !== null ? (
+					<h3>
+						Selected: {age === 0 ? 'Youth' : age === 1 ? 'Teens' : 'Adults'}
+					</h3>
+				) : (
+					<></>
+				)}
 				<button onClick={() => setAge(0)}>Youth</button>
 				<button onClick={() => setAge(1)}>Teens</button>
 				<button onClick={() => setAge(2)}>Adults</button>
 			</div>
 			<div>
-				<h1>
+				<h2>
 					What is the average experience level of the players in the session?
-				</h1>
-				{experience !== null ? <h2>Selected: {experience}</h2> : <></>}
+				</h2>
+				{experience !== null ? (
+					<h3>
+						Selected:{' '}
+						{experience === 0
+							? 'First Timers'
+							: experience === 1
+							? 'Familiar'
+							: experience === 2
+							? 'Experienced'
+							: 'Expert'}
+					</h3>
+				) : (
+					<></>
+				)}
 				<button onClick={() => setExperience(0)}>First Timers</button>
 				<button onClick={() => setExperience(1)}>Familiar</button>
 				<button onClick={() => setExperience(2)}>Experienced</button>
 				<button onClick={() => setExperience(3)}>Expert</button>
 			</div>
 			<div>
-				<h1>Allow experimental games?</h1>
+				<h2>Allow experimental games?</h2>
 				{allowExperimental !== null ? (
-					<h2>Selected: {allowExperimental}</h2>
+					<h3>Selected: {allowExperimental ? 'Yes' : 'No'}</h3>
 				) : (
 					<></>
 				)}

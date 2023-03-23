@@ -205,5 +205,212 @@
 		"difficulty": "medium",
 		"idealPlayers": 30,
 		"experimental": true
+	},
+	{
+		"name": "Bomb Break-In",
+		"category": "bomb",
+		"timeLimit": 6,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Battle of the Bulge",
+		"category": "control_points",
+		"timeLimit": 10,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Secure the Crash Site",
+		"category": "control_points",
+		"timeLimit": 10,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Money Plays",
+		"category": "hybrid",
+		"timeLimit": 10,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 10,
+		"experimental": false
+	},
+	{
+		"name": "Bank",
+		"category": "recovery",
+		"timeLimit": 6,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Resupply",
+		"category": "recovery",
+		"timeLimit": 5,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Resupply - Stealing Version",
+		"category": "recovery",
+		"timeLimit": 7,
+		"swapSides": false,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Cops and Robbers",
+		"category": "hybrid",
+		"timeLimit": 3,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Collison",
+		"category": "recovery",
+		"timeLimit": 4,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Plant",
+		"category": "recovery",
+		"timeLimit": 4,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Juggernaut Warlords",
+		"category": "hybrid",
+		"timeLimit": 5,
+		"swapSides": false,
+		"difficulty": "high",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Get Down, Mr/Mrs President",
+		"category": "escort",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Protect the VIP",
+		"category": "escort",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Medivac (Alien Evac)",
+		"category": "extraction",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "high",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Hacksaw Ridge",
+		"category": "extraction",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Riot",
+		"category": "hybrid",
+		"timeLimit": 4,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Bombardment",
+		"category": "elimination",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "low",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "The Fugitive",
+		"category": "elimination",
+		"timeLimit": 4,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Payload Tug of War",
+		"category": "escort",
+		"timeLimit": 5,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Payload",
+		"category": "escort",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Mobile Attack Position (M.A.P.)",
+		"category": "escort",
+		"timeLimit": 8,
+		"swapSides": false,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Raptor Down",
+		"category": "hybrid",
+		"timeLimit": 6,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Get to the Choppa",
+		"category": "extraction",
+		"timeLimit": 5,
+		"swapSides": true,
+		"difficulty": "medium",
+		"idealPlayers": 20,
+		"experimental": false
 	}
 ]
