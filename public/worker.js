@@ -1,5 +1,5 @@
 let CACHE_NAME = 'bh-playlist-generator';
-let urlsToCache = ['/', '/index.html'];
+let urlsToCache = ['/'];
 
 // Install a service worker
 self.addEventListener('install', (event) => {
