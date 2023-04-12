@@ -356,7 +356,7 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
-		"idealPlayers": 30,
+		"idealPlayers": 20,
 		"experimental": false
 	},
 	{
