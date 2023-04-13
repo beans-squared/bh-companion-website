@@ -4,6 +4,7 @@ import PartyIcon from './icons/Party';
 import NumberListIcon from './icons/NumberList';
 import TvIcon from './icons/Tv';
 import PlayIcon from './icons/Play';
+import PriceTagIcon from './icons/PriceTag';
 import './App.css';
 
 export default function App() {
@@ -43,6 +44,12 @@ export default function App() {
 				<button className="homepage-button animate-6" disabled>
 					<TvIcon />
 					OPEN SPECTATOR VIEW
+				</button>
+			</Link>
+			<Link to={'current-deals'}>
+				<button className="homepage-button animate-7" disabled>
+					<PriceTagIcon />
+					VIEW CURRENT DEALS
 				</button>
 			</Link>
 		</div>

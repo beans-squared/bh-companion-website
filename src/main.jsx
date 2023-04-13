@@ -37,6 +37,10 @@ const router = createBrowserRouter([
 		path: 'spectator-view',
 		element: <SpectatorView />,
 	},
+	// {
+	// 	path: 'current-deals',
+	// 	element: <DealsView />,
+	// },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
