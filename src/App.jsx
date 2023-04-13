@@ -9,7 +9,12 @@ import './App.css';
 export default function App() {
 	return (
 		<div id="homepage">
-			<img src="logo.png" alt="the battle house logo" className="animate-1" />
+			<img
+				src="logo.png"
+				alt="the battle house logo"
+				className="animate-1"
+				id="logo"
+			/>
 			<Link to={'generator'}>
 				<button className="homepage-button animate-2">
 					<NumberListIcon />

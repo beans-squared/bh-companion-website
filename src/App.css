@@ -8,7 +8,6 @@
 
 #homepage > #logo {
 	height: 180px;
-	animation: 0.5s ease-out 0s page-load-appear;
 }
 
 .homepage-button {
@@ -16,4 +15,3 @@
 	display: flex;
 	gap: 1rem;
 }
-
