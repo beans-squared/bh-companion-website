@@ -23,7 +23,7 @@ export default function App() {
 				</button>
 			</Link>
 			<Link to={'reporter'}>
-				<button className="homepage-button animate-3" disabled>
+				<button className="homepage-button animate-3">
 					<WrenchIcon />
 					REPORT BROKEN EQUIPMENT
 				</button>

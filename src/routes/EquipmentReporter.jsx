@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Modal from './Modal';
 import './EquipmentReporter.css';
 
 export default function EquipmentLogger() {
-	const navigate = useNavigate();
 	const [itemType, setItemType] = useState();
+	const [confirmationModal, setConfirmationModal] = useState();
+	const [formSubmitted, setFormSubmitted] = useState(false);
 
 	let itemTypeInputElement;
 	if (itemType === 'gun') {
@@ -71,89 +72,106 @@ export default function EquipmentLogger() {
 	}
 
 	function handleSubmit(event) {
-		// Prevent the browser from reloading the page
 		event.preventDefault();
 
-		// Read the form data
 		const form = event.target;
 		const formData = new FormData(form);
-
-		// You can pass formData as a fetch body directly:
-		// fetch('/some-api', { method: form.method, body: formData });
-
-		// Or you can work with it as a plain object:
 		const formJson = Object.fromEntries(formData.entries());
+		formJson.createdAt = new Date();
+
 		console.log('New ticket submission:', formJson);
 
-		navigate('/');
+		fetch(import.meta.env.VITE_CREATE_REPORT_ENDPOINT_URL, {
+			method: 'POST',
+			body: JSON.stringify(formJson),
+		});
+
+		setConfirmationModal(
+			<Modal
+				options={{
+					title: 'REPORT SUBMITTED',
+					description: 'Your report has been submitted.',
+					linkTo: '/',
+				}}
+			/>
+		);
 	}
 
 	return (
-		<form onSubmit={handleSubmit} method="POST" id="ticket-form">
-			<div className="form-item animate-1">
-				<label htmlFor="itemType" className="form-label">
-					ITEM TYPE
-				</label>
-				<select
-					name="itemType"
-					defaultValue="default"
-					onChange={(event) => setItemType(event.target.value)}
-				>
-					<option value="default" disabled>
-						Select one
-					</option>
-					<option value="gun">Gun</option>
-					<option value="prop">Game Prop</option>
-					<option value="other">Other</option>
-				</select>
-			</div>
-
-			{itemTypeInputElement}
-
-			{itemType ? (
-				<div className="form-item animate-2">
-					<label htmlFor="itemNumber" className="form-label">
-						ITEM #
+		<>
+			{confirmationModal}
+			<form onSubmit={handleSubmit} method="POST" id="ticket-form">
+				<div className="form-item animate-1">
+					<label htmlFor="itemType" className="form-label">
+						ITEM TYPE
 					</label>
-					<input type="number" name="itemNumber" placeholder="(optional)" />
+					<select
+						name="itemType"
+						defaultValue="default"
+						onChange={(event) => setItemType(event.target.value)}
+					>
+						<option value="default" disabled>
+							Select one
+						</option>
+						<option value="gun">Gun</option>
+						<option value="prop">Game Prop</option>
+						<option value="other">Other</option>
+					</select>
 				</div>
-			) : (
-				<></>
-			)}
 
-			{itemType ? (
-				<div className="form-item animate-3">
-					<label htmlFor="issueDescription" className="form-label">
-						DESCRIPTION OF ISSUE
-					</label>
-					<textarea
-						name="issueDescription"
-						placeholder={'Ex: ' + randomPlaceholderDescription()}
-					></textarea>
-				</div>
-			) : (
-				<></>
-			)}
+				{itemTypeInputElement}
 
-			{itemType ? (
-				<div className="form-item animate-4">
-					<label htmlFor="author" className="form-label">
-						YOUR INITIALS
-					</label>
-					<input type="text" name="author" maxLength="2" minLength="2" />
-				</div>
-			) : (
-				<></>
-			)}
+				{itemType ? (
+					<div className="form-item animate-2">
+						<label htmlFor="itemNumber" className="form-label">
+							ITEM #
+						</label>
+						<input type="number" name="itemNumber" placeholder="(optional)" />
+					</div>
+				) : (
+					<></>
+				)}
 
-			{itemType ? (
-				<div className="form-item animate-5">
-					<button type="submit">SUBMIT</button>
-				</div>
-			) : (
-				<></>
-			)}
-		</form>
+				{itemType ? (
+					<div className="form-item animate-3">
+						<label htmlFor="issueDescription" className="form-label">
+							DESCRIPTION OF ISSUE
+						</label>
+						<textarea
+							name="issueDescription"
+							placeholder={'Ex: ' + randomPlaceholderDescription()}
+						></textarea>
+					</div>
+				) : (
+					<></>
+				)}
+
+				{itemType ? (
+					<div className="form-item animate-4">
+						<label htmlFor="author" className="form-label">
+							YOUR INITIALS
+						</label>
+						<input type="text" name="author" maxLength="2" minLength="2" />
+					</div>
+				) : (
+					<></>
+				)}
+
+				{itemType ? (
+					<div className="form-item animate-5">
+						<button
+							type="submit"
+							onClick={() => setFormSubmitted(true)}
+							disabled={formSubmitted}
+						>
+							SUBMIT
+						</button>
+					</div>
+				) : (
+					<></>
+				)}
+			</form>
+		</>
 	);
 }
 
