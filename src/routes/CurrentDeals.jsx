@@ -26,7 +26,19 @@ export default function CurrentDeals() {
 
 	let index = 1;
 	const listedDeals = sortedDeals.map((deal) => (
-		<div key={deal.title} className={'deal-item ' + `animate-${index++}`}>
+		<div
+			key={deal.title}
+			className={
+				'deal-item ' +
+				`animate-${index++} ` +
+				`${
+					Date.now() > new Date(deal.startDate).valueOf() &&
+					Date.now() < new Date(deal.endDate).valueOf()
+						? 'ongoing'
+						: ''
+				}`
+			}
+		>
 			<h3 className="deal-dates">
 				{dealStatus(deal, 'SUMMER 2023')}
 				{deal.startDate ? ' | ' : ''}
