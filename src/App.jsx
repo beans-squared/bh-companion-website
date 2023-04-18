@@ -23,33 +23,33 @@ export default function App() {
 				</button>
 			</Link>
 			<Link to={'reporter'}>
-				<button className="homepage-button animate-3" disabled>
+				<button className="homepage-button animate-3">
 					<WrenchIcon />
 					REPORT BROKEN EQUIPMENT
 				</button>
 			</Link>
+			<Link to={'current-deals'}>
+				<button className="homepage-button animate-4">
+					<PriceTagIcon />
+					VIEW CURRENT DEALS
+				</button>
+			</Link>
 			<Link to={'room-manager'}>
-				<button className="homepage-button animate-4" disabled>
+				<button className="homepage-button animate-5" disabled>
 					<PartyIcon />
 					MANAGE PARTY ROOMS
 				</button>
 			</Link>
 			<Link to={'session-manager'}>
-				<button className="homepage-button animate-5" disabled>
+				<button className="homepage-button animate-6" disabled>
 					<PlayIcon />
 					RUN A SESSION
 				</button>
 			</Link>
 			<Link to={'spectator-view'}>
-				<button className="homepage-button animate-6" disabled>
+				<button className="homepage-button animate-7" disabled>
 					<TvIcon />
 					OPEN SPECTATOR VIEW
-				</button>
-			</Link>
-			<Link to={'current-deals'}>
-				<button className="homepage-button animate-7" disabled>
-					<PriceTagIcon />
-					VIEW CURRENT DEALS
 				</button>
 			</Link>
 		</div>

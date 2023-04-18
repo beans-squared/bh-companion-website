@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Memorial Day Deal",
+		"description": "Buy 2, get 1 free standard admission.",
+		"startDate": "29 May 2023 00:00:00 CST",
+		"endDate": "29 May 2023 00:00:00 CST"
+	},
+	{
+		"title": "Mother's Day Weekend",
+		"description": "Moms play free with a paying child or spouse.",
+		"startDate": "11 May 2023 00:00:00 CST",
+		"endDate": "13 May 2023 00:00:00 CST"
+	},
+	{
+		"title": "May the Fourth Be With You",
+		"description": "Get a free weapon upgrade when you wear Star Wars apparel, along with Star Wars games and props.",
+		"startDate": "4 May 2023 00:00:00 CST",
+		"endDate": "7 May 2023 00:00:00 CST"
+	},
+	{
+		"title": "Summer League",
+		"description": "We are gathering interest for a summertime league, no specific details yet.",
+		"startDate": "",
+		"endDate": ""
+	}
+]

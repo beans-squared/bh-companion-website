@@ -9,6 +9,7 @@ import Playlist from './routes/Playlist';
 import RoomManager from './routes/RoomManager';
 import SessionManager from './routes/SessionManager';
 import SpectatorView from './routes/SpectatorView';
+import CurrentDeals from './routes/CurrentDeals';
 import './root.css';
 
 const router = createBrowserRouter([
@@ -37,10 +38,10 @@ const router = createBrowserRouter([
 		path: 'spectator-view',
 		element: <SpectatorView />,
 	},
-	// {
-	// 	path: 'current-deals',
-	// 	element: <DealsView />,
-	// },
+	{
+		path: 'current-deals',
+		element: <CurrentDeals />,
+	},
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
