@@ -1,0 +1,172 @@
+[
+	{
+		"name": "Dust/sweep arena",
+		"daily_frequency": 14,
+		"area": "arena"
+	},
+	{
+		"name": "Vacuum box stairs",
+		"daily_frequency": 14,
+		"area": "arena"
+	},
+	{
+		"name": "Vacuum upstairs arena",
+		"daily_frequency": 30,
+		"area": "arena"
+	},
+	{
+		"name": "Sweep metal stairs and clean stair railings",
+		"daily_frequency": 7,
+		"area": "arena"
+	},
+	{
+		"name": "Mop arena stairs",
+		"daily_frequency": 21,
+		"area": "arena"
+	},
+	{
+		"name": "Deep dust of arena (move all boxes and crates, vacuum corners)",
+		"daily_frequency": 30,
+		"area": "arena"
+	},
+	{
+		"name": "Clean tops of barrels, crates and all rails",
+		"daily_frequency": 21,
+		"area": "arena"
+	},
+	{
+		"name": "Deep clean all guns",
+		"daily_frequency": 21,
+		"area": "arena"
+	},
+	{
+		"name": "Deep clean armory (vacuum racks themselves/sweep underneath racks/sort chargers and other bins if needed)",
+		"daily_frequency": 30,
+		"area": "arena"
+	},
+	{
+		"name": "Clean back room (sweep and wipe up messes if necessary)",
+		"daily_frequency": 30,
+		"area": "arena"
+	},
+	{
+		"name": "Deep clean all arena props",
+		"daily_frequency": 14,
+		"area": "arena"
+	},
+	{
+		"name": "Check and replace all cube and bomb batteries",
+		"daily_frequency": 1,
+		"area": "arena"
+	},
+	{
+		"name": "Clean sights",
+		"daily_frequency": 21,
+		"area": "arena"
+	},
+	{
+		"name": "Check slings for twists and fix if necessary",
+		"daily_frequency": 1,
+		"area": "arena"
+	},
+	{
+		"name": "Check to see if sights are working correctly (make sure no sights flicker/all sights should be on when on a number not in between two/all sights turn off when on correct dial)",
+		"daily_frequency": 1,
+		"area": "arena"
+	},
+	{
+		"name": "Vacuum covers in arena (all pieces of cloth that act as roofs, ex. top of bunkers on main street)",
+		"daily_frequency": 30,
+		"area": "arena"
+	},
+	{
+		"name": "Organize and clean FM crate",
+		"daily_frequency": 21,
+		"area": "arena"
+	},
+	{
+		"name": "Make sure .50 cal is sighted in",
+		"daily_frequency": 21,
+		"area": "arena"
+	},
+	{
+		"name": "Clean rescue soldiers",
+		"daily_frequency": 30,
+		"area": "arena"
+	},
+	{
+		"name": "Go through playbook and make sure everything is accurate",
+		"daily_frequency": 21,
+		"area": "arena"
+	},
+	{
+		"name": "Wipe down lobby chairs (ASAP)",
+		"daily_frequency": 7,
+		"area": "facility"
+	},
+	{
+		"name": "Organize and clean behind front desk",
+		"daily_frequency": 1,
+		"area": "facility"
+	},
+	{
+		"name": "Organize and clean waiver desk",
+		"daily_frequency": 7,
+		"area": "facility"
+	},
+	{
+		"name": "Check shirts/party favors",
+		"daily_frequency": 14,
+		"area": "facility"
+	},
+	{
+		"name": "Dust vents and supports on ceiling",
+		"daily_frequency": 30,
+		"area": "facility"
+	},
+	{
+		"name": "Clean baseboards",
+		"daily_frequency": 21,
+		"area": "facility"
+	},
+	{
+		"name": "Mop stairs",
+		"daily_frequency": 14,
+		"area": "facility"
+	},
+	{
+		"name": "Mop bathrooms/bar",
+		"daily_frequency": 2,
+		"area": "facility"
+	},
+	{
+		"name": "Clean elevator",
+		"daily_frequency": 7,
+		"area": "facility"
+	},
+	{
+		"name": "Ask to help count inventory",
+		"daily_frequency": 14,
+		"area": "facility"
+	},
+	{
+		"name": "Organize storage boxes for T-shirts (upstairs)",
+		"daily_frequency": 30,
+		"area": "facility"
+	},
+	{
+		"name": "Vacuum elevator/hallway to elevator",
+		"daily_frequency": 7,
+		"area": "facility"
+	},
+	{
+		"name": "Clean party room walls",
+		"daily_frequency": 21,
+		"area": "facility"
+	},
+	{
+		"name": "Clean keyboards",
+		"daily_frequency": 21,
+		"area": "facility"
+	}
+]

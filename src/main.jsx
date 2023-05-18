@@ -5,11 +5,11 @@ import App from './App';
 import ErrorPage from './ErrorPage';
 import EquipmentReporter from './routes/EquipmentReporter';
 import PlaylistGenerator from './routes/PlaylistGenerator';
-import Playlist from './routes/Playlist';
 import RoomManager from './routes/RoomManager';
 import SessionManager from './routes/SessionManager';
 import SpectatorView from './routes/SpectatorView';
 import CurrentDeals from './routes/CurrentDeals';
+import DeepCleanList from './routes/DeepCleanList';
 import './root.css';
 
 const router = createBrowserRouter([
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
 	{
 		path: 'current-deals',
 		element: <CurrentDeals />,
+	},
+	{
+		path: 'deep-clean-list',
+		element: <DeepCleanList />,
 	},
 ]);
 
