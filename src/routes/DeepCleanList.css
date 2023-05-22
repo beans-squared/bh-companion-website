@@ -1,0 +1,36 @@
+.deep-clean-item {
+	border: 2px solid var(--color-brand);
+	padding: 1rem;
+	margin: 1rem 0;
+	max-width: 90vw;
+	box-sizing: border-box;
+}
+
+.deep-clean-item #clickable-area {
+	cursor: pointer;
+}
+
+.deep-clean-item .frequency-bar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.markCompleteSection {
+	display: flex;
+	flex-direction: column;
+}
+
+.markCompleteSection > #inputs {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin: 1rem 0;
+}
+
+.markCompleteSection > #inputs > * {
+	width: 50%;
+}
+
+.hidden {
+	display: none;
+}

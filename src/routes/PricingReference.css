@@ -1,0 +1,39 @@
+#page {
+	width: 1280px;
+	max-width: 90vw;
+	display: flex;
+	flex-direction: column;
+}
+
+#page select {
+	margin: 1rem 0;
+	font-family: 'Black Ops One';
+	font-size: 2rem;
+	color: black;
+	background-color: var(--color-brand);
+}
+
+#page .price-container {
+	border: 1px solid gray;
+}
+
+#page h1 {
+	padding-left: 0.5rem;
+}
+
+#page h2 {
+	padding-left: 1rem;
+	border-top: 1px solid gray;
+	font-family: 'Poppins';
+}
+
+#page .prices p {
+	padding: 0.25rem 1rem 0.25rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Poppins';
+}
+
+#page .prices p:nth-of-type(2n) {
+	background-color: var(--color-bg-light);
+}

@@ -6,6 +6,8 @@ import TvIcon from './icons/Tv';
 import PlayIcon from './icons/Play';
 import PriceTagIcon from './icons/PriceTag';
 import SprayIcon from './icons/Spray';
+import PriceIcon from './icons/Price';
+import MapIcon from './icons/Map';
 import './App.css';
 
 export default function App() {
@@ -35,28 +37,40 @@ export default function App() {
 					VIEW CURRENT DEALS
 				</button>
 			</Link>
-			<Link to={'deep-clean-list'}>
+			<Link to={'pricing-reference'}>
 				<button className="homepage-button animate-5">
+					<PriceIcon />
+					PRICING REFERENCE
+				</button>
+			</Link>
+			<Link to={'cleaning-list'}>
+				<button className="homepage-button animate-6" disabled>
 					<SprayIcon />
-					DEEP CLEAN LIST
+					CLEANING LIST
 				</button>
 			</Link>
 			<Link to={'room-manager'}>
-				<button className="homepage-button animate-6" disabled>
+				<button className="homepage-button animate-7" disabled>
 					<PartyIcon />
 					MANAGE PARTY ROOMS
 				</button>
 			</Link>
 			<Link to={'session-manager'}>
-				<button className="homepage-button animate-7" disabled>
+				<button className="homepage-button animate-8" disabled>
 					<PlayIcon />
 					RUN A SESSION
 				</button>
 			</Link>
 			<Link to={'spectator-view'}>
-				<button className="homepage-button animate-8" disabled>
+				<button className="homepage-button animate-9" disabled>
 					<TvIcon />
 					OPEN SPECTATOR VIEW
+				</button>
+			</Link>
+			<Link to={'arena-editor'}>
+				<button className="homepage-button animate-10" disabled>
+					<MapIcon />
+					VIRTUAL ARENA MAP
 				</button>
 			</Link>
 		</div>

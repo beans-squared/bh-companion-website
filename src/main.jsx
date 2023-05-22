@@ -11,6 +11,7 @@ import SpectatorView from './routes/SpectatorView';
 import CurrentDeals from './routes/CurrentDeals';
 import DeepCleanList from './routes/DeepCleanList';
 import './root.css';
+import PricingReference from './routes/PricingReference';
 
 const router = createBrowserRouter([
 	{
@@ -43,8 +44,12 @@ const router = createBrowserRouter([
 		element: <CurrentDeals />,
 	},
 	{
-		path: 'deep-clean-list',
+		path: 'cleaning-list',
 		element: <DeepCleanList />,
+	},
+	{
+		path: 'pricing-reference',
+		element: <PricingReference />,
 	},
 ]);
 

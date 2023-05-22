@@ -27,6 +27,9 @@
 	justify-content: center;
 
 	--color-brand: #fedd04;
+	--color-bg: #2d2d2d;
+	--color-bg-dark: #000000;
+	--color-bg-light: #424242;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -177,4 +180,8 @@ form {
 
 .animate-9 {
 	animation: 0.9s linear hide, 0.5s ease-out 0.9s page-load-appear;
+}
+
+.animate-10 {
+	animation: 1s linear hide, 0.5s ease-out 1s page-load-appear;
 }
