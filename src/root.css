@@ -27,9 +27,12 @@
 	justify-content: center;
 
 	--color-brand: #fedd04;
+
 	--color-bg: #2d2d2d;
 	--color-bg-dark: #000000;
 	--color-bg-light: #424242;
+
+	--color-text: #ffffff;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -41,7 +44,10 @@
 @media (prefers-color-scheme: light) {
 	:root {
 		color: #213547;
-		background-color: #ffffff;
+		background-color: var(--color-bg);
+		--color-bg: #ffffff;
+		--color-bg-dark: #9f9f9f;
+		--color-bg-light: #ffffff;
 	}
 }
 
@@ -63,7 +69,7 @@ button {
 	padding: 1rem;
 	font-family: 'Black Ops One';
 	font-size: 1.2rem;
-	color: black;
+	color: #000000;
 	background-color: var(--color-brand);
 	border: none;
 }
@@ -89,8 +95,8 @@ textarea {
 	padding: 0.75rem;
 	font-family: 'Poppins';
 	font-size: 1rem;
-	color: white;
-	background-color: #424040;
+	color: var(--color-text);
+	background-color: var(--color-bg-light);
 	border: none;
 }
 
