@@ -81,13 +81,10 @@ export default function EquipmentLogger() {
 
 		console.log('New ticket submission:', formJson);
 
-		fetch(
-			'https://jduw4e0eu7.execute-api.us-east-2.amazonaws.com/default/reports',
-			{
-				method: 'POST',
-				body: JSON.stringify(formJson),
-			}
-		);
+		fetch(import.meta.env.VITE_CREATE_REPORT_ENDPOINT_URL, {
+			method: 'POST',
+			body: JSON.stringify(formJson),
+		});
 
 		setConfirmationModal(
 			<Modal
