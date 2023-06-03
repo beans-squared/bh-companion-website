@@ -34,7 +34,7 @@ export default function App() {
 			<Link to={'current-deals'}>
 				<button className="homepage-button animate-4">
 					<PriceTagIcon />
-					VIEW CURRENT DEALS
+					VIEW CURRENT DEALS & GAMES
 				</button>
 			</Link>
 			<Link to={'pricing-reference'}>
