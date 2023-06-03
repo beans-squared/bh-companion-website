@@ -47,12 +47,12 @@ export default function CurrentDeals() {
 					{dealStatus(deal, 'SUMMER 2023')}
 					{deal.startDate ? ' | ' : ''}
 					{deal.startDate
-						? `${new Date(deal.startDate).toLocaleDateString()}`
+						? `${new Date(deal.startDate).toLocaleDateString('en-US')}`
 						: ''}
 					{deal.endDate &&
 					new Date(deal.endDate).valueOf() !==
 						new Date(deal.startDate).valueOf()
-						? ` - ${new Date(deal.endDate).toLocaleDateString()}`
+						? ` - ${new Date(deal.endDate).toLocaleDateString('en-US')}`
 						: ''}
 				</h3>
 				<h1 className="deal-title">{deal.title}</h1>
