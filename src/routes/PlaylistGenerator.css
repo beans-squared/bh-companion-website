@@ -26,6 +26,11 @@
 	align-items: center;
 }
 
+.gamelist-item {
+	padding: 0.5rem;
+	text-align: center;
+}
+
 #regenerate-button {
 	width: 400px;
 	max-width: 90vw;
