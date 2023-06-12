@@ -13,37 +13,44 @@ export default function PricingReference() {
 					<section className="prices">
 						<p>
 							<span>Standard Play (1.75 Hours)</span>
-							<span>$43</span>
+							<span>$47</span>
 						</p>
 						<p>
 							<span>Additional Play (1.75 Hours)</span>
-							<span>$20</span>
+							<span>$22</span>
 						</p>
 						<p>
 							<span>Late Night Deal (1.75 Hours)</span>
-							<span>$38</span>
+							<span>$42</span>
 						</p>
 						<p>
 							<span>Double Time (3.5 Hours)</span>
-							<span>$55</span>
+							<span>$60</span>
 						</p>
 					</section>
 					<h2>Military/First Responders</h2>
 					<section className="prices">
 						<p>
 							<span>Standard Play (1.75 Hours)</span>
-							<span>$38</span>
+							<span>$42</span>
+						</p>
+					</section>
+					<h2>Groups of 21 or More</h2>
+					<section className="prices">
+						<p>
+							<span>Standard Play (1.75 Hours)</span>
+							<span>$42</span>
 						</p>
 					</section>
 					<h2>Friends of Battle House</h2>
 					<section className="prices">
 						<p>
 							<span>Standard Play (1.75 Hours)</span>
-							<span>$25</span>
+							<span>$27.50</span>
 						</p>
 						<p>
 							<span>Additional Play (1.75 Hours)</span>
-							<span>$15</span>
+							<span>$17.50</span>
 						</p>
 					</section>
 
@@ -52,41 +59,41 @@ export default function PricingReference() {
 					<section className="prices">
 						<p>
 							<span>Standard Play (1 Hour)</span>
-							<span>$30</span>
+							<span>$34</span>
 						</p>
 						<p>
 							<span>Standard Play (2 Hours)</span>
-							<span>$40</span>
+							<span>$44</span>
 						</p>
 						<p>
 							<span>Additional Play (1 Hour)</span>
-							<span>$15</span>
+							<span>$17</span>
 						</p>
 					</section>
 					<h2>Student Special (Thurs Only)</h2>
 					<section className="prices">
 						<p>
 							<span>Standard Play (1 Hour)</span>
-							<span>$20</span>
+							<span>$22</span>
 						</p>
 						<p>
 							<span>Standard Play (2 Hours)</span>
-							<span>$30</span>
+							<span>$33</span>
 						</p>
 					</section>
 					<h2>Friends of Battle House</h2>
 					<section className="prices">
 						<p>
 							<span>Standard Play (1 Hour)</span>
-							<span>$15</span>
+							<span>$17.50</span>
 						</p>
 						<p>
 							<span>Standard Play (2 Hours)</span>
-							<span>$25</span>
+							<span>$27.50</span>
 						</p>
 						<p>
 							<span>Additional Play (1 Hour)</span>
-							<span>$10</span>
+							<span>$12.50</span>
 						</p>
 					</section>
 				</section>
@@ -102,15 +109,15 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Minimum Deposit</span>
-							<span>$480</span>
+							<span>$614</span>
 						</p>
 						<p>
 							<span>Minimum Players</span>
-							<span>10</span>
+							<span>12</span>
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$43</span>
+							<span>$47</span>
 						</p>
 					</section>
 					<h1>Organized School & Youth Groups</h1>
@@ -120,16 +127,12 @@ export default function PricingReference() {
 							<span>Battle Outside Open Hours</span>
 						</p>
 						<p>
-							<span>12-20 Players</span>
-							<span>$34</span>
-						</p>
-						<p>
-							<span>21-40 Players</span>
-							<span>$32</span>
+							<span>15-40 Players</span>
+							<span>$35</span>
 						</p>
 						<p>
 							<span>41+ Players</span>
-							<span>$30</span>
+							<span>$32</span>
 						</p>
 						<p>
 							<span>No Charge for Event Room</span>
@@ -142,8 +145,8 @@ export default function PricingReference() {
 							<span>Battle During Open Hours</span>
 						</p>
 						<p>
-							<span>Minium Deposit</span>
-							<span>$630</span>
+							<span>Minimum Deposit</span>
+							<span>$710</span>
 						</p>
 						<p>
 							<span>Minimum Players</span>
@@ -151,28 +154,10 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$30</span>
+							<span>$34</span>
 						</p>
 					</section>
 					<h2>Two Hour</h2>
-					<section className="prices">
-						<p>
-							<span>Battle During Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$830</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>20</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$40</span>
-						</p>
-					</section>
-					<h1>Friday</h1>
 					<section className="prices">
 						<p>
 							<span>Battle During Open Hours</span>
@@ -187,7 +172,25 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$43</span>
+							<span>$44</span>
+						</p>
+					</section>
+					<h1>Friday</h1>
+					<section className="prices">
+						<p>
+							<span>Battle During Open Hours</span>
+						</p>
+						<p>
+							<span>Minimum Deposit</span>
+							<span>$1,225</span>
+						</p>
+						<p>
+							<span>Minimum Players</span>
+							<span>25</span>
+						</p>
+						<p>
+							<span>Additional Players</span>
+							<span>$47</span>
 						</p>
 					</section>
 					<h1>Saturday</h1>
@@ -199,15 +202,15 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Minimum Deposit</span>
-							<span>$910</span>
+							<span>$1,225</span>
 						</p>
 						<p>
 							<span>Minimum Players</span>
-							<span>20</span>
+							<span>25</span>
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$43</span>
+							<span>$47</span>
 						</p>
 					</section>
 					<h2>Peak Hours</h2>
@@ -218,7 +221,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Minimum Deposit</span>
-							<span>$1,770</span>
+							<span>$1,930</span>
 						</p>
 						<p>
 							<span>Minimum Players</span>
@@ -226,7 +229,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$43</span>
+							<span>$47</span>
 						</p>
 					</section>
 					<h1>Sunday</h1>
@@ -237,7 +240,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Minimum Deposit</span>
-							<span>$930</span>
+							<span>$1,050</span>
 						</p>
 						<p>
 							<span>Minimum Players</span>
@@ -245,7 +248,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$30</span>
+							<span>$34</span>
 						</p>
 					</section>
 					<h2>Two Hours</h2>
@@ -255,7 +258,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Minimum Deposit</span>
-							<span>$1,230</span>
+							<span>$1,350</span>
 						</p>
 						<p>
 							<span>Minimum Players</span>
@@ -263,7 +266,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$40</span>
+							<span>$44</span>
 						</p>
 					</section>
 				</section>
@@ -276,7 +279,7 @@ export default function PricingReference() {
 					<section className="prices">
 						<p>
 							<span>1.75 Hours</span>
-							<span>$265</span>
+							<span>$285</span>
 						</p>
 						<p>
 							<span>Included Tickets</span>
@@ -284,7 +287,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$43</span>
+							<span>$47</span>
 						</p>
 						<p>
 							<span>Event Space After Battle</span>
@@ -296,7 +299,7 @@ export default function PricingReference() {
 					<section className="prices">
 						<p>
 							<span>1 Hour</span>
-							<span>$180</span>
+							<span>$200</span>
 						</p>
 						<p>
 							<span>Included Tickets</span>
@@ -304,7 +307,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$30</span>
+							<span>$34</span>
 						</p>
 						<p>
 							<span>Event Space After Battle</span>
@@ -315,7 +318,7 @@ export default function PricingReference() {
 					<section className="prices">
 						<p>
 							<span>2 Hours</span>
-							<span>$230</span>
+							<span>$250</span>
 						</p>
 						<p>
 							<span>Included Tickets</span>
@@ -323,7 +326,7 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Additional Players</span>
-							<span>$40</span>
+							<span>$44</span>
 						</p>
 						<p>
 							<span>Event Space After Battle</span>
