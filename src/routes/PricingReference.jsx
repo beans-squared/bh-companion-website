@@ -70,7 +70,7 @@ export default function PricingReference() {
 							<span>$17</span>
 						</p>
 					</section>
-					<h2>Student Special (Thurs Only)</h2>
+					<h2>Student Special (Wednesday & Thursday Only)</h2>
 					<section className="prices">
 						<p>
 							<span>Standard Play (1 Hour)</span>
