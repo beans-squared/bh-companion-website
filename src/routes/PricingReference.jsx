@@ -8,7 +8,7 @@ export default function PricingReference() {
 		if (chartSelection === 'sessionPasses') {
 			return (
 				<section className="price-container">
-					<h1>Wed, Fri & Sat</h1>
+					<h1>Friday & Saturday</h1>
 					<h2>Standard Admission</h2>
 					<section className="prices">
 						<p>
@@ -54,7 +54,7 @@ export default function PricingReference() {
 						</p>
 					</section>
 
-					<h1>Thurs & Sun</h1>
+					<h1>Wednesday, Thursday & Sunday</h1>
 					<h2>Standard Admission</h2>
 					<section className="prices">
 						<p>
