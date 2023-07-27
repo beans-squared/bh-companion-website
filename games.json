@@ -5,7 +5,9 @@
 		"timeLimit": 6,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -14,7 +16,9 @@
 		"timeLimit": 6,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -23,7 +27,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -32,7 +38,9 @@
 		"timeLimit": 6,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 16,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -41,7 +49,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -50,7 +60,9 @@
 		"timeLimit": 10,
 		"swapSides": true,
 		"difficulty": "medium",
-		"idealPlayers": 20,
+		"minPlayers": 6,
+		"idealPlayers": 14,
+		"maxPlayers": 20,
 		"experimental": false
 	},
 	{
@@ -59,7 +71,9 @@
 		"timeLimit": 15,
 		"swapSides": false,
 		"difficulty": "low",
+		"minPlayers": 2,
 		"idealPlayers": 40,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -68,7 +82,9 @@
 		"timeLimit": 15,
 		"swapSides": false,
 		"difficulty": "low",
+		"minPlayers": 2,
 		"idealPlayers": 20,
+		"maxPlayers": 24,
 		"experimental": false
 	},
 	{
@@ -77,16 +93,20 @@
 		"timeLimit": 10,
 		"swapSides": false,
 		"difficulty": "low",
+		"minPlayers": 2,
 		"idealPlayers": 10,
+		"maxPlayers": 10,
 		"experimental": false
 	},
 	{
-		"name": "Signal Flare (ET Phone Home)",
+		"name": "Signal Flare",
 		"category": "control_points",
 		"timeLimit": 10,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -95,7 +115,9 @@
 		"timeLimit": 4,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 20,
 		"idealPlayers": 40,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -104,7 +126,9 @@
 		"timeLimit": 3,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -113,7 +137,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 10,
 		"idealPlayers": 40,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -122,7 +148,9 @@
 		"timeLimit": 4,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -131,7 +159,9 @@
 		"timeLimit": 4,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 4,
 		"idealPlayers": 20,
+		"maxPlayers": 20,
 		"experimental": false
 	},
 	{
@@ -140,7 +170,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "high",
+		"minPlayers": 20,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -149,7 +181,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 16,
 		"idealPlayers": 30,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -158,7 +192,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 4,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -167,7 +203,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 4,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -176,7 +214,9 @@
 		"timeLimit": 10,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": true
 	},
 	{
@@ -185,7 +225,9 @@
 		"timeLimit": 6,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": true
 	},
 	{
@@ -194,16 +236,20 @@
 		"timeLimit": 6,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 40,
 		"experimental": true
 	},
 	{
-		"name": "Bomb Break-In",
+		"name": "Break-In",
 		"category": "bomb",
 		"timeLimit": 6,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 8,
 		"idealPlayers": 30,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -212,16 +258,20 @@
 		"timeLimit": 10,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 2,
 		"idealPlayers": 30,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
-		"name": "Secure the Crash Site",
+		"name": "Secure the Crashsite",
 		"category": "control_points",
 		"timeLimit": 10,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -230,7 +280,9 @@
 		"timeLimit": 10,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 2,
 		"idealPlayers": 10,
+		"maxPlayers": 20,
 		"experimental": false
 	},
 	{
@@ -239,7 +291,9 @@
 		"timeLimit": 6,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 4,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -247,17 +301,21 @@
 		"category": "recovery",
 		"timeLimit": 5,
 		"swapSides": false,
-		"difficulty": "medium",
+		"difficulty": "low",
+		"minPlayers": 4,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
-		"name": "Resupply - Stealing Version",
+		"name": "Resupply Bases",
 		"category": "recovery",
 		"timeLimit": 7,
 		"swapSides": false,
 		"difficulty": "low",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -266,7 +324,9 @@
 		"timeLimit": 3,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -275,7 +335,9 @@
 		"timeLimit": 4,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -284,7 +346,20 @@
 		"timeLimit": 4,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 4,
 		"idealPlayers": 30,
+		"maxPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Warlords",
+		"category": "hybrid",
+		"timeLimit": 5,
+		"swapSides": false,
+		"difficulty": "medium",
+		"minPlayers": 6,
+		"idealPlayers": 30,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -293,7 +368,9 @@
 		"timeLimit": 5,
 		"swapSides": false,
 		"difficulty": "high",
+		"minPlayers": 20,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -302,7 +379,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 4,
 		"idealPlayers": 30,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -311,16 +390,20 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 6,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
-		"name": "Medivac (Alien Evac)",
+		"name": "Medivac",
 		"category": "extraction",
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "high",
+		"minPlayers": 20,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -329,7 +412,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -338,7 +423,9 @@
 		"timeLimit": 4,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -347,16 +434,20 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 6,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
-		"name": "The Fugitive",
+		"name": "Fugitive",
 		"category": "elimination",
 		"timeLimit": 4,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 50,
 		"experimental": false
 	},
 	{
@@ -365,7 +456,9 @@
 		"timeLimit": 5,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 6,
 		"idealPlayers": 20,
+		"maxPlayers": 20,
 		"experimental": false
 	},
 	{
@@ -374,7 +467,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 6,
 		"idealPlayers": 20,
+		"maxPlayers": 20,
 		"experimental": false
 	},
 	{
@@ -383,7 +478,9 @@
 		"timeLimit": 8,
 		"swapSides": false,
 		"difficulty": "medium",
+		"minPlayers": 6,
 		"idealPlayers": 20,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -392,7 +489,9 @@
 		"timeLimit": 6,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 30,
 		"experimental": false
 	},
 	{
@@ -401,7 +500,9 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "medium",
+		"minPlayers": 20,
 		"idealPlayers": 20,
+		"maxPlayers": 40,
 		"experimental": false
 	},
 	{
@@ -410,7 +511,31 @@
 		"timeLimit": 5,
 		"swapSides": true,
 		"difficulty": "low",
+		"minPlayers": 10,
 		"idealPlayers": 30,
+		"maxPlayers": 30,
+		"experimental": false
+	},
+	{
+		"name": "Hard Point",
+		"category": "control_points",
+		"timeLimit": 12,
+		"swapSides": false,
+		"difficulty": "low",
+		"minPlayers": 2,
+		"idealPlayers": 10,
+		"maxPlayers": 20,
+		"experimental": false
+	},
+	{
+		"name": "Sabotage",
+		"category": "control_points",
+		"timeLimit": 12,
+		"swapSides": false,
+		"difficulty": "low",
+		"minPlayers": 2,
+		"idealPlayers": 16,
+		"maxPlayers": 24,
 		"experimental": false
 	}
 ]

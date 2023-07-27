@@ -222,9 +222,9 @@ function chooseGames(
 	// Filter for number of players
 	// will take game's ideal player count and set min as ideal-15, min 2 and max as ideal+15, max 60
 	games = games.filter((game) => {
-		let min = game.idealPlayers - 15;
+		let min = game.minPlayers;
 		if (min < 2) min = 2;
-		let max = game.idealPlayers + 15;
+		let max = game.maxPlayers;
 		if (max > 60) max = 60;
 
 		return players >= min && players <= max;
