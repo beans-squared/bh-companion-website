@@ -101,8 +101,8 @@ export default function PricingReference() {
 		} else if (chartSelection === 'privateEvents') {
 			return (
 				<section className="price-container">
-					<h1>Mid-Week</h1>
-					<h2>Off Hours</h2>
+					<h1>Mid-Week Off Hours</h1>
+					<h2>1.75 Hours</h2>
 					<section className="prices">
 						<p>
 							<span>Battle Outside Open Hours</span>
@@ -118,6 +118,42 @@ export default function PricingReference() {
 						<p>
 							<span>Additional Players</span>
 							<span>$47</span>
+						</p>
+					</section>
+					<h2>1.0 Hours</h2>
+					<section className="prices">
+						<p>
+							<span>Battle Outside Open Hours</span>
+						</p>
+						<p>
+							<span>Minimum Deposit</span>
+							<span>$540</span>
+						</p>
+						<p>
+							<span>Minimum Players</span>
+							<span>15</span>
+						</p>
+						<p>
+							<span>Additional Players</span>
+							<span>$34</span>
+						</p>
+					</section>
+					<h2>2.0 Hours</h2>
+					<section className="prices">
+						<p>
+							<span>Battle Outside Open Hours</span>
+						</p>
+						<p>
+							<span>Minimum Deposit</span>
+							<span>$470</span>
+						</p>
+						<p>
+							<span>Minimum Players</span>
+							<span>10</span>
+						</p>
+						<p>
+							<span>Additional Players</span>
+							<span>$44</span>
 						</p>
 					</section>
 					<h1>Organized School & Youth Groups</h1>
@@ -139,7 +175,7 @@ export default function PricingReference() {
 						</p>
 					</section>
 					<h1>Thursday</h1>
-					<h2>One Hour</h2>
+					<h2>1.0 Hour</h2>
 					<section className="prices">
 						<p>
 							<span>Battle During Open Hours</span>
@@ -157,7 +193,7 @@ export default function PricingReference() {
 							<span>$34</span>
 						</p>
 					</section>
-					<h2>Two Hour</h2>
+					<h2>2.0 Hours</h2>
 					<section className="prices">
 						<p>
 							<span>Battle During Open Hours</span>
@@ -233,7 +269,7 @@ export default function PricingReference() {
 						</p>
 					</section>
 					<h1>Sunday</h1>
-					<h2>One Hour</h2>
+					<h2>1.0 Hour</h2>
 					<section className="prices">
 						<p>
 							<span>Battle During Open Hours</span>
@@ -251,7 +287,7 @@ export default function PricingReference() {
 							<span>$34</span>
 						</p>
 					</section>
-					<h2>Two Hours</h2>
+					<h2>2.0 Hours</h2>
 					<section className="prices">
 						<p>
 							<span>Battle During Open Hours</span>
