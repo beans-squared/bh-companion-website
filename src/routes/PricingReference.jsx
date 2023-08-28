@@ -174,7 +174,7 @@ export default function PricingReference() {
 							<span>No Charge for Event Room</span>
 						</p>
 					</section>
-					<h1>Thursday</h1>
+					<h1>Wednesday & Thursday</h1>
 					<h2>1.0 Hour</h2>
 					<section className="prices">
 						<p>
