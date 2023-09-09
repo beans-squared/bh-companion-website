@@ -145,11 +145,11 @@ export default function PricingReference() {
 						</p>
 						<p>
 							<span>Minimum Deposit</span>
-							<span>$470</span>
+							<span>$558</span>
 						</p>
 						<p>
 							<span>Minimum Players</span>
-							<span>10</span>
+							<span>12</span>
 						</p>
 						<p>
 							<span>Additional Players</span>
