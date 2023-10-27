@@ -4,7 +4,7 @@ import useWebSocket, { ReadyState } from 'react-use-websocket'
 import './SpectatorView.css'
 
 export default function SpectatorView() {
-	const { sendMessage, lastMessage, readyState } = useWebSocket('ws://localhost:8080')
+	const { sendMessage, lastMessage, readyState } = useWebSocket('wss://server.smcmo.dev')
 	const [parsedLastMessage, setParsedLastMessage] = useState({})
 
 	// const handleClickSendMessage = useCallback(() => sendMessage('Hello World'), [])
