@@ -1,24 +1,19 @@
-import { Link } from 'react-router-dom';
-import WrenchIcon from './icons/Wrench';
-import PartyIcon from './icons/Party';
-import NumberListIcon from './icons/NumberList';
-import TvIcon from './icons/Tv';
-import PlayIcon from './icons/Play';
-import PriceTagIcon from './icons/PriceTag';
-import SprayIcon from './icons/Spray';
-import PriceIcon from './icons/Price';
-import MapIcon from './icons/Map';
-import './App.css';
+import { Link } from 'react-router-dom'
+import WrenchIcon from './icons/Wrench'
+import PartyIcon from './icons/Party'
+import NumberListIcon from './icons/NumberList'
+import TvIcon from './icons/Tv'
+import PlayIcon from './icons/Play'
+import PriceTagIcon from './icons/PriceTag'
+import SprayIcon from './icons/Spray'
+import PriceIcon from './icons/Price'
+import MapIcon from './icons/Map'
+import './App.css'
 
 export default function App() {
 	return (
 		<div id="homepage">
-			<img
-				src="logo.png"
-				alt="the battle house logo"
-				className="animate-1"
-				id="logo"
-			/>
+			<img src="logo.png" alt="the battle house logo" className="animate-1" id="logo" />
 			<Link to={'generator'}>
 				<button className="homepage-button animate-2">
 					<NumberListIcon />
@@ -44,7 +39,7 @@ export default function App() {
 				</button>
 			</Link>
 			<Link to={'cleaning-list'}>
-				<button className="homepage-button animate-6" disabled>
+				<button className="homepage-button animate-6">
 					<SprayIcon />
 					CLEANING LIST
 				</button>
@@ -56,13 +51,13 @@ export default function App() {
 				</button>
 			</Link>
 			<Link to={'session-manager'}>
-				<button className="homepage-button animate-8" disabled>
+				<button className="homepage-button animate-8">
 					<PlayIcon />
 					RUN A SESSION
 				</button>
 			</Link>
 			<Link to={'spectator-view'}>
-				<button className="homepage-button animate-9" disabled>
+				<button className="homepage-button animate-9">
 					<TvIcon />
 					OPEN SPECTATOR VIEW
 				</button>
@@ -74,5 +69,5 @@ export default function App() {
 				</button>
 			</Link>
 		</div>
-	);
+	)
 }

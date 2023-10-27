@@ -10,9 +10,18 @@
 	cursor: pointer;
 }
 
+.deep-clean-item h1 {
+	font-size: 24px;
+}
+
 .deep-clean-item .frequency-bar {
 	display: flex;
 	justify-content: space-between;
+}
+
+.deep-clean-item .frequency-bar h2 {
+	font-family: 'Poppins';
+	font-size: 16px;
 }
 
 .markCompleteSection {
