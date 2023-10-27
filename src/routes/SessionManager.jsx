@@ -4,7 +4,7 @@ import useWebSocket, { ReadyState } from 'react-use-websocket'
 import './SessionManager.css'
 
 export default function SessionManager() {
-	const { sendMessage, lastMessage, readyState } = useWebSocket(`ws://${process.env.WSS}`)
+	const { sendMessage, lastMessage, readyState } = useWebSocket(`wss://${process.env.WSS}`)
 	const [totalCubes, setTotalCubes] = useState(1)
 	const [blueCubes, setBlueCubes] = useState(0)
 	const [redCubes, setRedCubes] = useState(0)
