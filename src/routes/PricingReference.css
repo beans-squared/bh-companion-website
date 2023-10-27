@@ -8,7 +8,7 @@
 #page select {
 	margin: 1rem 0;
 	font-family: 'Black Ops One';
-	font-size: 2rem;
+	font-size: 1.25rem;
 	color: black;
 	background-color: var(--color-brand);
 }
