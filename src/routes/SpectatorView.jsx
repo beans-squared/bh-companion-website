@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react'
-import ProgressBar from '../components/ProgressBar'
 import useWebSocket, { ReadyState } from 'react-use-websocket'
-import './SpectatorView.css'
+import './SpectatorView.scss'
+import { GameScreen } from '../components/GameScreen'
+import { Connecting } from '../components/Connecting'
+import { Disconnected } from '../components/Disconnected'
 
 export default function SpectatorView() {
-	const { sendMessage, lastMessage, readyState } = useWebSocket('wss://server.smcmo.dev')
-	const [parsedLastMessage, setParsedLastMessage] = useState({})
-
-	// const handleClickSendMessage = useCallback(() => sendMessage('Hello World'), [])
+	const { lastJsonMessage, readyState } = useWebSocket(import.meta.env.VITE_WEBSERVER_URL)
 
 	const connectionStatus = {
 		[ReadyState.CONNECTING]: 'Connecting',
@@ -17,87 +15,27 @@ export default function SpectatorView() {
 		[ReadyState.UNINSTANTIATED]: 'Uninstantiated',
 	}[readyState]
 
-	useEffect(() => {
-		sendMessage(
-			JSON.stringify({
-				type: 'request_game_state',
-			})
-		)
-	}, [])
-
-	function parseMessageData(data) {
-		return JSON.parse(data)
-	}
-
-	useEffect(() => {
-		renderScreen()
-	}, [readyState])
-
-	function renderScreen() {
-		if (connectionStatus !== 'Open') {
-			return <h1>Connecting...</h1>
-		} else {
-			if (lastMessage) {
-				if (parseMessageData(lastMessage.data).status === 'idle') {
-					return <h1>Game is idle</h1>
-				} else {
-					return (
-						<section className="page">
-							<div className="title-text">
-								<h2>MISSION SCENARIO:</h2>
-								<h1>{parseMessageData(lastMessage.data).gameTitle}</h1>
-								<p>{parseMessageData(lastMessage.data).gameDescription}</p>
-							</div>
-
-							<div className="total-cps">
-								<h2>Total Control Points</h2>
-								<h1>{parseMessageData(lastMessage.data).totalControlPoints}</h1>
-							</div>
-
-							<div className="bottom-section">
-								<div className="text">
-									<p>
-										<span className="blue-team">Blue Team</span>
-										<br />
-										has captured {parseMessageData(lastMessage.data).blueControlPoints} control points
-									</p>
-									<p>
-										{parseMessageData(lastMessage.data).totalControlPoints -
-											parseMessageData(lastMessage.data).blueControlPoints -
-											parseMessageData(lastMessage.data).redControlPoints}{' '}
-										control points
-										<br />
-										are contested
-									</p>
-									<p>
-										<span className="red-team">Red Team</span>
-										<br />
-										has captured {parseMessageData(lastMessage.data).redControlPoints} control points
-									</p>
-								</div>
-								<div className="meters">
-									<ProgressBar
-										key="blue-team-bar"
-										bgcolor="blue"
-										completed={((parseMessageData(lastMessage.data).blueControlPoints / parseMessageData(lastMessage.data).totalControlPoints) * 100).toFixed(
-											1
-										)}
-									/>
-									<ProgressBar
-										key="red-team-bar"
-										bgcolor="red"
-										completed={((parseMessageData(lastMessage.data).redControlPoints / parseMessageData(lastMessage.data).totalControlPoints) * 100).toFixed(1)}
-									/>
-								</div>
-							</div>
-						</section>
-					)
-				}
-			} else {
-				return <h1>Loading...</h1>
-			}
-		}
-	}
-
-	return <>{renderScreen()}</>
+	return (
+		<div className="spectator-view">
+			{connectionStatus === 'Connecting' ? <Connecting /> : <></>}
+			{connectionStatus === 'Open' ? (
+				<div>
+					{lastJsonMessage ? (
+						<>
+							{lastJsonMessage.status === 'idle' ? (
+								<p className="status-text">Waiting for session operator to start a game</p>
+							) : (
+								<GameScreen game={lastJsonMessage.currentGame} />
+							)}
+						</>
+					) : (
+						<p className="status-text">Awaiting response from server...</p>
+					)}
+				</div>
+			) : (
+				<></>
+			)}
+			{connectionStatus === 'Closed' ? <Disconnected /> : <></>}
+		</div>
+	)
 }

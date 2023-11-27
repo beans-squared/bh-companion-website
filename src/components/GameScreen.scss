@@ -1,0 +1,35 @@
+div.game-screen {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	section.title-text {
+		padding: 16px;
+
+		h2 {
+			font-size: 32px;
+		}
+
+		h1 {
+			font-size: 64px;
+		}
+
+		p {
+			font-size: 24px;
+			font-family: 'Poppins';
+		}
+	}
+	section.data-display {
+		flex-basis: 100%;
+
+		h2.not-supported {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			font-family: 'Poppins';
+			color: #9d2d2d;
+		}
+	}
+}

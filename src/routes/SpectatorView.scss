@@ -1,0 +1,14 @@
+.spectator-view {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+
+	.status-text {
+		font-size: 64px;
+		font-family: 'Poppins';
+	}
+}

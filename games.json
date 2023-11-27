@@ -177,6 +177,7 @@
 	},
 	{
 		"name": "Capture the Flag",
+		"description": "",
 		"category": "recovery",
 		"timeLimit": 5,
 		"swapSides": true,

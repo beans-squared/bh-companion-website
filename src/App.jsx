@@ -21,7 +21,7 @@ export default function App() {
 				</button>
 			</Link>
 			<Link to={'reporter'}>
-				<button className="homepage-button animate-3">
+				<button className="homepage-button animate-3" disabled>
 					<WrenchIcon />
 					REPORT BROKEN EQUIPMENT
 				</button>
@@ -29,7 +29,7 @@ export default function App() {
 			<Link to={'current-deals'}>
 				<button className="homepage-button animate-4">
 					<PriceTagIcon />
-					VIEW CURRENT DEALS & GAMES
+					VIEW CURRENT DEALS
 				</button>
 			</Link>
 			<Link to={'pricing-reference'}>
@@ -39,7 +39,7 @@ export default function App() {
 				</button>
 			</Link>
 			<Link to={'cleaning-list'}>
-				<button className="homepage-button animate-6">
+				<button className="homepage-button animate-6" disabled>
 					<SprayIcon />
 					CLEANING LIST
 				</button>
