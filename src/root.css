@@ -191,3 +191,7 @@ form {
 .animate-10 {
 	animation: 1s linear hide, 0.5s ease-out 1s page-load-appear;
 }
+
+.pricing-reference-item-highlight:nth-of-type(2n) {
+	background-color: var(--color-bg-light);
+}

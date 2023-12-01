@@ -1,83 +1,64 @@
-import { useState } from 'react';
-import Playlist from './Playlist';
-import allGames from '../../games.json';
-import './PlaylistGenerator.css';
+import { useState } from 'react'
+import Playlist from './Playlist'
+import allGames from '../../games.json'
 
 export default function PlaylistGenerator() {
-	const [sessionLength, setSessionLength] = useState(getDefaultHourValue());
-	const [playerCount, setPlayerCount] = useState(null);
-	const [avgPlayerAge, setAvgPlayerAge] = useState(null);
-	const [avgPlayerExp, setAvgPlayerExp] = useState(null);
-	const [allowExperimentalGames, setAllowExperimentalGames] = useState(false);
-	const [formSubmitted, setFormSubmitted] = useState(false);
+	const [sessionLength, setSessionLength] = useState(getDefaultHourValue())
+	const [playerCount, setPlayerCount] = useState(null)
+	const [avgPlayerAge, setAvgPlayerAge] = useState(null)
+	const [avgPlayerExp, setAvgPlayerExp] = useState(null)
+	const [allowExperimentalGames, setAllowExperimentalGames] = useState(false)
+	const [formSubmitted, setFormSubmitted] = useState(false)
 
-	const [playlist, setPlaylist] = useState([]);
+	const [playlist, setPlaylist] = useState([])
 
 	function handleSubmit(event) {
-		event.preventDefault();
+		event.preventDefault()
 
-		const playlist = generatePlaylist(
-			sessionLength,
-			playerCount,
-			avgPlayerAge,
-			avgPlayerExp,
-			allowExperimentalGames
-		);
+		const playlist = generatePlaylist(sessionLength, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames)
 
-		setPlaylist(playlist);
-		setFormSubmitted(true);
+		setPlaylist(playlist)
+		setFormSubmitted(true)
 	}
 
 	return (
 		<>
-			<form
-				onSubmit={handleSubmit}
-				method="POST"
-				className={formSubmitted ? 'hidden' : ''}
-			>
+			<form onSubmit={handleSubmit} method="POST" className={formSubmitted ? 'hidden' : ''}>
 				<div className="form-item animate-1">
 					<label className="form-label">SESSION LENGTH</label>
 					<div className="button-options">
-						<div className="prefill-button" onClick={() => setSessionLength(1)}>
+						<div
+							style={{ color: 'black', backgroundColor: 'var(--color-brand)', padding: '1rem', fontSize: '1.2rem', cursor: 'pointer' }}
+							onClick={() => setSessionLength(1)}
+						>
 							1 HOUR
 						</div>
 						<div
-							className="prefill-button"
+							style={{ color: 'black', backgroundColor: 'var(--color-brand)', padding: '1rem', fontSize: '1.2rem', cursor: 'pointer' }}
 							onClick={() => setSessionLength(1.75)}
 						>
 							1.75 HOURS
 						</div>
-						<div className="prefill-button" onClick={() => setSessionLength(2)}>
+						<div
+							style={{ color: 'black', backgroundColor: 'var(--color-brand)', padding: '1rem', fontSize: '1.2rem', cursor: 'pointer' }}
+							onClick={() => setSessionLength(2)}
+						>
 							2 HOURS
 						</div>
 					</div>
-					<input
-						type="number"
-						name="sessionLength"
-						id="hours-input"
-						value={sessionLength}
-						onChange={(event) => setHours(event.target.value)}
-					/>
+					<input type="number" name="sessionLength" style={{ marginTop: '1rem' }} value={sessionLength} onChange={(event) => setHours(event.target.value)} />
 				</div>
 
 				<div className="form-item animate-2" id="player-count-div">
 					<label className="form-label">PLAYER COUNT</label>
-					<input
-						type="number"
-						name="playerCount"
-						onChange={(event) => setPlayerCount(event.target.value)}
-					/>
+					<input type="number" name="playerCount" onChange={(event) => setPlayerCount(event.target.value)} />
 				</div>
 
 				<div className="form-item animate-3">
 					<label className="form-label" htmlFor="avgPlayerAge">
 						AVERAGE PLAYER AGE
 					</label>
-					<select
-						name="avgPlayerAge"
-						defaultValue="default"
-						onChange={(event) => setAvgPlayerAge(event.target.value)}
-					>
+					<select name="avgPlayerAge" defaultValue="default" onChange={(event) => setAvgPlayerAge(event.target.value)}>
 						<option value="default" disabled>
 							Select one
 						</option>
@@ -91,11 +72,7 @@ export default function PlaylistGenerator() {
 					<label className="form-label" htmlFor="avgPlayerExp">
 						AVERAGE EXPERIENCE LEVEL
 					</label>
-					<select
-						name="avgPlayerExp"
-						defaultValue="default"
-						onChange={(event) => setAvgPlayerExp(event.target.value)}
-					>
+					<select name="avgPlayerExp" defaultValue="default" onChange={(event) => setAvgPlayerExp(event.target.value)}>
 						<option value="default" disabled>
 							Select one
 						</option>
@@ -107,128 +84,83 @@ export default function PlaylistGenerator() {
 				</div>
 
 				<div className="form-item animate-5">
-					<div id="enable-experimental-item">
+					<div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
 						<input
 							type="checkbox"
 							name="allowExperimentalGames"
 							id="enable-experimental-checkbox"
-							onChange={(event) =>
-								setAllowExperimentalGames(event.target.value)
-							}
+							onChange={(event) => setAllowExperimentalGames(event.target.value)}
 						/>
-						<label
-							className="form-label"
-							htmlFor="enable-experimental-checkbox"
-						>
+						<label className="form-label" htmlFor="enable-experimental-checkbox" style={{ fontSize: '1.3rem' }}>
 							Allow experimental games?
 						</label>
 					</div>
 				</div>
 
 				<div className="form-item animate-6">
-					<button
-						disabled={!(playerCount && avgPlayerAge && avgPlayerExp)}
-						type="submit"
-					>
+					<button disabled={!(playerCount && avgPlayerAge && avgPlayerExp)} type="submit">
 						GENERATE PLAYLIST
 					</button>
 				</div>
 			</form>
 
-			<div className={!formSubmitted ? 'hidden' : ''} id="playlist">
+			<div className={!formSubmitted ? 'hidden' : ''} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
 				<Playlist playlist={playlist} />
 				<button
-					onClick={() =>
-						setPlaylist(
-							generatePlaylist(
-								sessionLength,
-								playerCount,
-								avgPlayerAge,
-								avgPlayerExp,
-								allowExperimentalGames
-							)
-						)
-					}
-					id="regenerate-button"
+					style={{ width: '400px', maxWidth: '90vw', marginTop: '1rem' }}
+					onClick={() => setPlaylist(generatePlaylist(sessionLength, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames))}
 				>
 					REGENERATE
 				</button>
 			</div>
 		</>
-	);
+	)
 }
 
 function getDefaultHourValue() {
-	const day = new Date().getDay();
+	const day = new Date().getDay()
 	if (day === 0 || day === 4) {
-		return 1;
+		return 1
 	} else {
-		return 1.75;
+		return 1.75
 	}
 }
 
-function generatePlaylist(
-	sessionLength,
-	playerCount,
-	avgPlayerAge,
-	avgPlayerExp,
-	allowExperimentalGames
-) {
-	const sessionTotalMinutes = sessionLength * 60 - 15;
-	let remainingMinutes = sessionTotalMinutes;
-	let chosenGames = [];
-	let chosenCategories = [];
+function generatePlaylist(sessionLength, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames) {
+	const sessionTotalMinutes = sessionLength * 60 - 15
+	let remainingMinutes = sessionTotalMinutes
+	let chosenGames = []
+	let chosenCategories = []
 
-	const gameList = chooseGames(
-		remainingMinutes,
-		playerCount,
-		avgPlayerAge,
-		avgPlayerExp,
-		allowExperimentalGames,
-		allGames,
-		chosenGames,
-		chosenCategories
-	);
+	const gameList = chooseGames(remainingMinutes, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames, allGames, chosenGames, chosenCategories)
 
-	return gameList;
+	return gameList
 }
 
-function chooseGames(
-	remainingMinutes,
-	players,
-	age,
-	experience,
-	allowExperimental,
-	games,
-	chosenGames,
-	chosenCategories
-) {
+function chooseGames(remainingMinutes, players, age, experience, allowExperimental, games, chosenGames, chosenCategories) {
 	// Filter for remaining time in session
 	games = games.filter((game) => {
-		const INITIAL_BRIEFING_TIME = 4;
-		const SWAP_BRIEFING_TIME = 2;
+		const INITIAL_BRIEFING_TIME = 4
+		const SWAP_BRIEFING_TIME = 2
 
-		const gameTime =
-			game.timeLimit +
-			(game.swapSides ? game.timeLimit + SWAP_BRIEFING_TIME : 0) +
-			INITIAL_BRIEFING_TIME;
+		const gameTime = game.timeLimit + (game.swapSides ? game.timeLimit + SWAP_BRIEFING_TIME : 0) + INITIAL_BRIEFING_TIME
 		// (Game's maximum time) + if the game swaps sides (game's maximum time + 2) + (4) for briefing time
-		return gameTime < remainingMinutes;
-	});
+		return gameTime < remainingMinutes
+	})
 
 	// Filter for experimental games
-	if (!allowExperimental) games = games.filter((game) => !game.experimental);
+	if (!allowExperimental) games = games.filter((game) => !game.experimental)
 
 	// Filter for number of players
 	// will take game's ideal player count and set min as ideal-15, min 2 and max as ideal+15, max 60
 	games = games.filter((game) => {
-		let min = game.minPlayers;
-		if (min < 2) min = 2;
-		let max = game.maxPlayers;
-		if (max > 60) max = 60;
+		let min = game.minPlayers
+		if (min < 2) min = 2
+		let max = game.maxPlayers
+		if (max > 60) max = 60
 
-		return players >= min && players <= max;
-	});
+		return players >= min && players <= max
+	})
 
 	// Filter for appropriate difficulty
 	// Youth = 0, Teens = 1, Adults = 2
@@ -236,41 +168,38 @@ function chooseGames(
 	// Add age and experience values
 	// 0-1 Low, 2-3 Medium, 4-5 Hard
 	games = games.filter((game) => {
-		const diffVal = age + experience;
+		const diffVal = age + experience
 		if (diffVal === 0 || diffVal === 1) {
-			return game.difficulty === 'low';
+			return game.difficulty === 'low'
 		} else if (diffVal === 2 || diffVal === 3) {
-			return game.difficulty === 'low' || game.difficulty === 'medium';
+			return game.difficulty === 'low' || game.difficulty === 'medium'
 		} else {
-			return game.difficulty === 'medium' || game.difficulty === 'high';
+			return game.difficulty === 'medium' || game.difficulty === 'high'
 		}
-	});
+	})
 
 	// Filter for duplicate categories
-	let filteredGames = games;
+	let filteredGames = games
 	for (const category of chosenCategories) {
 		if (games.some((game) => game.category === category)) {
-			filteredGames = games.filter((game) => game.category !== category);
+			filteredGames = games.filter((game) => game.category !== category)
 		}
 	}
 	if (filteredGames.length === 0) {
-		chosenCategories = [];
+		chosenCategories = []
 	}
-	games = filteredGames;
+	games = filteredGames
 
-	if (games.length === 0) return chosenGames;
-	const rand = Math.floor(Math.random() * games.length);
-	const selectedGame = games[rand];
-	games = games.filter((game) => game.name !== selectedGame.name);
+	if (games.length === 0) return chosenGames
+	const rand = Math.floor(Math.random() * games.length)
+	const selectedGame = games[rand]
+	games = games.filter((game) => game.name !== selectedGame.name)
 
-	chosenGames.push(selectedGame);
-	chosenCategories.push(selectedGame.category);
+	chosenGames.push(selectedGame)
+	chosenCategories.push(selectedGame.category)
 
 	return chooseGames(
-		remainingMinutes -
-			(selectedGame.timeLimit +
-				(selectedGame.swapSides ? selectedGame.timeLimit + 2 : 0) +
-				4),
+		remainingMinutes - (selectedGame.timeLimit + (selectedGame.swapSides ? selectedGame.timeLimit + 2 : 0) + 4),
 		players,
 		age,
 		experience,
@@ -278,5 +207,5 @@ function chooseGames(
 		games,
 		chosenGames,
 		chosenCategories
-	);
+	)
 }

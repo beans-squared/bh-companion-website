@@ -1,5 +1,4 @@
 import useWebSocket, { ReadyState } from 'react-use-websocket'
-import './SpectatorView.scss'
 import { GameScreen } from '../components/GameScreen'
 import { Connecting } from '../components/Connecting'
 import { Disconnected } from '../components/Disconnected'
@@ -16,14 +15,14 @@ export default function SpectatorView() {
 	}[readyState]
 
 	return (
-		<div className="spectator-view">
+		<div style={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: '0' }}>
 			{connectionStatus === 'Connecting' ? <Connecting /> : <></>}
 			{connectionStatus === 'Open' ? (
 				<div>
 					{lastJsonMessage ? (
 						<>
 							{lastJsonMessage.status === 'idle' ? (
-								<p className="status-text">Waiting for session operator to start a game</p>
+								<p style={{ fontSize: '4rem', fontFamily: 'Poppins' }}>Waiting for session operator to start a game</p>
 							) : (
 								<GameScreen game={lastJsonMessage.currentGame} />
 							)}

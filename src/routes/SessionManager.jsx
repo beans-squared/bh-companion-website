@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import useWebSocket, { ReadyState } from 'react-use-websocket'
-import './SessionManager.scss'
 import { Connecting } from '../components/Connecting'
 import { Disconnected } from '../components/Disconnected'
 import { GameControls } from '../components/GameControls'
@@ -23,34 +22,48 @@ export default function SessionManager() {
 	}
 
 	return (
-		<div className="session-manager">
+		<div style={{ position: 'absolute', top: '0', width: '100vw' }}>
 			{connectionStatus === 'Connecting' ? <Connecting /> : <></>}
 			{connectionStatus === 'Open' ? (
 				<div>
 					{lastJsonMessage ? (
 						<>
 							{lastJsonMessage.status === 'idle' ? (
-								<div className="page-content">
-									<p className="title">Start by creating a game playlist below</p>
-									<form onSubmit={addGameToPlaylist}>
-										<select name="selectedGame" id="">
+								<div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', maxWidth: '640px', margin: '0 auto' }}>
+									<p style={{ fontSize: '1.5rem', fontFamily: 'Poppins', textAlign: 'center', padding: '1rem' }}>Start by creating a game playlist below</p>
+									<form onSubmit={addGameToPlaylist} style={{ width: '100%' }}>
+										<select name="selectedGame" style={{ width: '100%' }}>
 											<option value="Bomb">Bomb</option>
 											<option value="Capture the Flag">Capture the Flag</option>
 											<option value="Domination">Domination</option>
 											<option value="Search and Destroy">Search and Destroy</option>
 											<option value="Siege">Siege</option>
 										</select>
-										<button type="submit">Add Game to Playlist</button>
-										{playlist.length >= 1 ? <button onClick={() => setPlaylist([])}>Clear Playlist</button> : <></>}
+										<button type="submit" style={{ width: '100%' }}>
+											Add Game to Playlist
+										</button>
+										{playlist.length >= 1 ? <button onClick={() => setPlaylist([])} style={{ width: '100%' }}>Clear Playlist</button> : <></>}
 									</form>
-									<div className="playlist">
-										<ol>
+									<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1rem', width: '100%', maxWidth: '90vw' }}>
+										<ol style={{ border: playlist.length >= 1 ? '2px solid var(--color-brand)' : '', boxSizing: 'border-box', width: '100%' }}>
 											{playlist.map((game) => (
-												<li>{game}</li>
+												<li
+													style={{
+														backgroundColor: 'var(--color-bg-light)',
+														fontFamily: 'Poppins',
+														listStylePosition: 'inside',
+														padding: '0.5rem',
+														margin: '0.5rem',
+													}}
+												>
+													{game}
+												</li>
 											))}
 										</ol>
 										{playlist.length >= 1 ? (
-											<button onClick={() => sendJsonMessage({ command: 'start_session', games: playlist })}>Start Session</button>
+											<button onClick={() => sendJsonMessage({ command: 'start_session', games: playlist })} style={{ marginTop: '1rem', width: '100%' }}>
+												Start Session
+											</button>
 										) : (
 											<></>
 										)}
