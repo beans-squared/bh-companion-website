@@ -1,4 +1,8 @@
 import deals from '../../deals.json'
+import dayjs from 'dayjs'
+import UTC from 'dayjs/plugin/utc'
+
+dayjs.extend(UTC)
 
 export default function CurrentDeals() {
 	function dealStatus(deal, timePeriod) {
@@ -41,9 +45,9 @@ export default function CurrentDeals() {
 								<h3 style={{ fontSize: '1rem', color: '#b3b3b3' }}>
 									{dealStatus(deal, deal.timePeriod)}
 									{deal.startDate ? ' | ' : ''}
-									{deal.startDate ? `${new Date(deal.startDate).toLocaleDateString('en-US')}` : ''}
+									{deal.startDate ? `${dayjs.utc(deal.startDate).format('M/D/YYYY')}` : ''}
 									{deal.endDate && new Date(deal.endDate).valueOf() !== new Date(deal.startDate).valueOf()
-										? ` - ${new Date(deal.endDate).toLocaleDateString('en-US')}`
+										? ` - ${dayjs.utc(deal.endDate).format('M/D/YYYY')}`
 										: ''}
 								</h3>
 								<h1 style={{ fontSize: '1.5rem' }}>{deal.title}</h1>
