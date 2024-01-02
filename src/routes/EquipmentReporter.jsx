@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Modal from './Modal';
-import './EquipmentReporter.css';
 
 export default function EquipmentLogger() {
 	const [itemType, setItemType] = useState();

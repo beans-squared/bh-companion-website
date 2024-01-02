@@ -1,0 +1,17 @@
+.loader {
+	width: 100px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	padding: 1px;
+	background: conic-gradient(#0000, #ffffff) content-box;
+	mask: repeating-conic-gradient(#0000 0deg, #000 1deg calc(360deg / 20 - 1deg - 1deg), #0000 calc(360deg / 20 - 1deg) calc(360deg / 20)),
+		radial-gradient(farthest-side, #0000 calc(98% - 7px), #000 calc(100% - 7px));
+	mask-composite: intersect;
+	-webkit-mask-composite: destination-in;
+	animation: spin 1200ms infinite steps(20);
+}
+@keyframes spin {
+	to {
+		transform: rotate(1turn);
+	}
+}

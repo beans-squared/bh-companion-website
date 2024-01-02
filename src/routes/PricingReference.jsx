@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import './PricingReference.css';
+import { useState } from 'react'
+import prices from '../../pricing.json'
 
 export default function PricingReference() {
-	const [chartSelection, setChartSelection] = useState('sessionPasses');
+	const [pageSelection, setPageSelection] = useState(prices[0])
 
 	function currentPriceChart() {
 		if (chartSelection === 'sessionPasses') {
@@ -71,7 +71,7 @@ export default function PricingReference() {
 						</p>
 					</section>
 				</section>
-			);
+			)
 		} else if (chartSelection === 'privateEvents') {
 			return (
 				<section className="price-container">
@@ -186,7 +186,7 @@ export default function PricingReference() {
 							<span>$44</span>
 						</p>
 					</section>
-					<h1>Friday, Saturday  & Sunday</h1>
+					<h1>Friday, Saturday & Sunday</h1>
 					<h2>1.0 Hour</h2>
 					<section className="prices">
 						<p>
@@ -224,7 +224,7 @@ export default function PricingReference() {
 						</p>
 					</section>
 				</section>
-			);
+			)
 		} else if (chartSelection === 'events') {
 			return (
 				<section className="price-container">
@@ -308,18 +308,41 @@ export default function PricingReference() {
 						</p>
 					</section>
 				</section>
-			);
+			)
 		}
 	}
 
 	return (
-		<div id="page" className="animate-1">
-			<select onChange={(event) => setChartSelection(event.target.value)}>
-				<option value="sessionPasses">Individual Tickets</option>
-				<option value="privateEvents">Private Events</option>
-				<option value="events">Birthdays & Corporate Events</option>
+		<div style={{ width: '1280px', maxWidth: '90vw', display: 'flex', flexDirection: 'column' }} className="animate-1">
+			<select
+				style={{ margin: '1rem 0', fontSize: '1.25rem', fontWeight: 'bold', color: 'black', backgroundColor: 'var(--color-brand)' }}
+				onChange={(event) => setPageSelection(prices.find((page) => page.id === event.target.value))}
+			>
+				{prices.map((page) => (
+					<option value={page.id}>{page.title}</option>
+				))}
 			</select>
-			{currentPriceChart()}
+			<section style={{ border: '1px solid gray', marginBottom: '1rem' }}>
+				{pageSelection.sections.map((section) => (
+					<section>
+						<h1 style={{ paddingLeft: '0.5rem', fontSize: '1.5rem' }}>{section.title}</h1>
+						{section.subsections.map((subsection) => (
+							<div>
+								<h2 style={{ paddingLeft: '1rem', borderTop: '1px solid gray', fontFamily: 'Poppins' }}>{subsection.title}</h2>
+								{subsection.items.map((item) => (
+									<p
+										style={{ padding: '0.25rem 1rem 0.25rem 2rem', display: 'flex', justifyContent: 'space-between', fontFamily: 'Poppins' }}
+										className="pricing-reference-item-highlight"
+									>
+										<span>{item.key}</span>
+										<span>{item.value}</span>
+									</p>
+								))}
+							</div>
+						))}
+					</section>
+				))}
+			</section>
 		</div>
-	);
+	)
 }

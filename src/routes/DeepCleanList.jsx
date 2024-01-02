@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import './DeepCleanList.css'
 
 export default function DeepCleanList() {
 	const [tasks, setTasks] = useState([])
@@ -29,20 +28,30 @@ export default function DeepCleanList() {
 	}, [])
 
 	const listedTasks = tasks.map((task) => (
-		<div key={task.id} className="deep-clean-item" hidden={!task.overdue}>
-			<div onClick={toggleMarkComplete} id="clickable-area">
-				<h1>{task.name}</h1>
-				<div className="frequency-bar">
-					<h2>
+		<div
+			key={task.id}
+			style={{
+				border: '2px solid var(--color-brand)',
+				padding: '1rem',
+				margin: '1rem',
+				maxWidth: '90vw',
+				boxSizing: 'border-box',
+				display: task.overdue ? 'default' : 'none',
+			}}
+		>
+			<div onClick={toggleMarkComplete} style={{ cursor: 'pointer' }}>
+				<h1 style={{ fontSize: '1.5rem' }}>{task.name}</h1>
+				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+					<h2 style={{ fontFamily: 'Poppins', fontSize: '1rem' }}>
 						{task.timeSinceLastCompletionString} overdue - last completed {new Date(task.dateCompleted).toLocaleDateString()}
 					</h2>
 					<h2>Every {task.frequency} days</h2>
 				</div>
 			</div>
-			<div className="markCompleteSection">
-				<div id="inputs">
-					<input type="date" defaultValue={new Date().toISOString().split('T')[0]} />
-					<input type="text" placeholder="Your initials" id="initials-input" />
+			<div style={{ display: 'flex', flexDirection: 'column' }}>
+				<div style={{ display: 'flex', justifyContent: 'space-between', gap: '0.5rem', margin: '1rem 0' }}>
+					<input type="date" defaultValue={new Date().toISOString().split('T')[0]} style={{ width: '50%' }} />
+					<input type="text" placeholder="Your initials" id="initials-input" style={{ width: '50%' }} />
 				</div>
 				<button onClick={() => (task.overdue = false)}>MARK COMPLETED</button>
 			</div>

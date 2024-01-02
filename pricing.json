@@ -1,0 +1,495 @@
+[
+	{
+		"id": "sessionPasses",
+		"title": "Individual Tickets",
+		"sections": [
+			{
+				"title": "Individual Tickets",
+				"subsections": [
+					{
+						"title": "Standard Pricing",
+						"items": [
+							{
+								"key": "Battle - 1.0 Hour",
+								"value": "$34"
+							},
+							{
+								"key": "Battle - 2.0 Hours",
+								"value": "$44"
+							},
+							{
+								"key": "Battle - 3.0 Hours",
+								"value": "$54"
+							},
+							{
+								"key": "Battle - 4.0 Hours",
+								"value": "$64"
+							},
+							{
+								"key": "Additional Battle",
+								"value": "$10"
+							}
+						]
+					},
+					{
+						"title": "Military & First Responder Discount",
+						"items": [
+							{
+								"key": "Battle - 1.0 Hour",
+								"value": "$30"
+							},
+							{
+								"key": "Battle - 2.0 Hours",
+								"value": "$40"
+							},
+							{
+								"key": "Battle - 3.0 Hours",
+								"value": "$50"
+							},
+							{
+								"key": "Battle - 4.0 Hours",
+								"value": "$60"
+							}
+						]
+					},
+					{
+						"title": "Student Discount (Wed & Thu Only)",
+						"items": [
+							{
+								"key": "Battle - 1.0 Hour",
+								"value": "$22"
+							},
+							{
+								"key": "Battle - 2.0 Hours",
+								"value": "$33"
+							},
+							{
+								"key": "Battle - 3.0 Hours",
+								"value": "$44"
+							},
+							{
+								"key": "Battle - 4.0 Hours",
+								"value": "$55"
+							}
+						]
+					},
+					{
+						"title": "Friends of Battle House Discount",
+						"items": [
+							{
+								"key": "Battle - 1.0 Hour",
+								"value": "$17.50"
+							},
+							{
+								"key": "Battle - 2.0 Hours",
+								"value": "$27.50"
+							},
+							{
+								"key": "Battle - 3.0 Hours",
+								"value": "$37.50"
+							},
+							{
+								"key": "Battle - 4.0 Hours",
+								"value": "$47.50"
+							}
+						]
+					},
+					{
+						"title": "Group Rate (20+ players required)",
+						"items": [
+							{
+								"key": "Battle - 1.0 Hour",
+								"value": "$30"
+							},
+							{
+								"key": "Battle - 2.0 Hours",
+								"value": "$40"
+							},
+							{
+								"key": "Battle - 3.0 Hours",
+								"value": "$50"
+							},
+							{
+								"key": "Battle - 4.0 Hours",
+								"value": "$60"
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "privateEvents",
+		"title": "Private Events",
+		"sections": [
+			{
+				"title": "Midweek/Off Hours",
+				"subsections": [
+					{
+						"title": "1 Hour Event",
+						"items": [
+							{
+								"key": "Battle Outside Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$458"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "12"
+							},
+							{
+								"key": "Additional players",
+								"value": "$34"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes"
+							}
+						]
+					},
+					{
+						"title": "2 Hour Event",
+						"items": [
+							{
+								"key": "Battle Outside Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$578"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "12"
+							},
+							{
+								"key": "Additional players",
+								"value": "$44"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Organized School & Youth Groups",
+				"subsections": [
+					{
+						"title": "1 Hour Event",
+						"items": [
+							{
+								"key": "Battle Outside Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$500"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "20"
+							},
+							{
+								"key": "Additional players",
+								"value": "$25"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes (Included)"
+							}
+						]
+					},
+					{
+						"title": "2 Hour Event",
+						"items": [
+							{
+								"key": "Battle Outside Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$700"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "20"
+							},
+							{
+								"key": "Additional players",
+								"value": "$35"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes (Included)"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Wednesday & Thursday",
+				"subsections": [
+					{
+						"title": "1 Hour Event",
+						"items": [
+							{
+								"key": "Battle During Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$730"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "20"
+							},
+							{
+								"key": "Additional players",
+								"value": "$34"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes"
+							}
+						]
+					},
+					{
+						"title": "2 Hour Event",
+						"items": [
+							{
+								"key": "Battle During Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$930"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "20"
+							},
+							{
+								"key": "Additional players",
+								"value": "$44"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Friday, Saturday & Sunday",
+				"subsections": [
+					{
+						"title": "1 Hour Event",
+						"items": [
+							{
+								"key": "Battle During Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$1,070"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "30"
+							},
+							{
+								"key": "Additional players",
+								"value": "$34"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes"
+							}
+						]
+					},
+					{
+						"title": "2 Hour Event",
+						"items": [
+							{
+								"key": "Battle During Open Hours",
+								"value": ""
+							},
+							{
+								"key": "Minimum Deposit",
+								"value": "$1,370"
+							},
+							{
+								"key": "Minimum Players",
+								"value": "30"
+							},
+							{
+								"key": "Additional players",
+								"value": "$44"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 Minutes"
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "parties",
+		"title": "Public Events",
+		"sections": [
+			{
+				"title": "Standard Pricing",
+				"subsections": [
+					{
+						"title": "Recon 1.1",
+						"items": [
+							{
+								"key": "1 Hour Battle",
+								"value": "$200"
+							},
+							{
+								"key": "Included Tickets",
+								"value": "5"
+							},
+							{
+								"key": "Additional players",
+								"value": "$34"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 minutes"
+							}
+						]
+					},
+					{
+						"title": "Recon 1.2",
+						"items": [
+							{
+								"key": "2 Hour Battle",
+								"value": "$250"
+							},
+							{
+								"key": "Included Tickets",
+								"value": "5"
+							},
+							{
+								"key": "Additional players",
+								"value": "$44"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 minutes"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Military & First Responder Discount",
+				"subsections": [
+					{
+						"title": "Recon 1.1",
+						"items": [
+							{
+								"key": "1 Hour Battle",
+								"value": "$180"
+							},
+							{
+								"key": "Included Tickets",
+								"value": "5"
+							},
+							{
+								"key": "Additional players",
+								"value": "$30"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 minutes"
+							}
+						]
+					},
+					{
+						"title": "Recon 1.2",
+						"items": [
+							{
+								"key": "2 Hour Battle",
+								"value": "$230"
+							},
+							{
+								"key": "Included Tickets",
+								"value": "5"
+							},
+							{
+								"key": "Additional players",
+								"value": "$40"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 minutes"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Group Rate (20+ players required)",
+				"subsections": [
+					{
+						"title": "Recon 1.1",
+						"items": [
+							{
+								"key": "1 Hour Battle",
+								"value": "$630"
+							},
+							{
+								"key": "Included Tickets",
+								"value": "20"
+							},
+							{
+								"key": "Additional players",
+								"value": "$30"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 minutes"
+							}
+						]
+					},
+					{
+						"title": "Recon 1.2",
+						"items": [
+							{
+								"key": "2 Hour Battle",
+								"value": "$830"
+							},
+							{
+								"key": "Included Tickets",
+								"value": "20"
+							},
+							{
+								"key": "Additional players",
+								"value": "$40"
+							},
+							{
+								"key": "Event Room After Battle",
+								"value": "30 minutes"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
