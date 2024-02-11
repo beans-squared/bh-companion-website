@@ -1,16 +1,16 @@
 [
 	{
 		"draft": false,
-		"title": "Stay and Play Deal - End of Winter Break",
-		"description": "Play two sessions for the price of one, or four sessions for the price of two.",
-		"startDate": "2024-01-08",
-		"endDate": ""
+		"title": "Valentine's Day Deal",
+		"description": "All tickets 50% off.",
+		"startDate": "2024-02-14",
+		"endDate": "2024-02-16"
 	},
 	{
 		"draft": false,
-		"title": "Stay and Play Deal - MLK Day",
+		"title": "President's Day - Stay and Play",
 		"description": "Play two sessions for the price of one, or four sessions for the price of two.",
-		"startDate": "2024-01-15",
-		"endDate": ""
+		"startDate": "2024-02-19",
+		"endDate": "2024-02-19"
 	}
 ]
