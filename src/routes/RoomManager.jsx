@@ -1,27 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import EventRoom from '../components/EventRoom'
 
 export default function RoomManager() {
-	const [rooms, setRooms] = useState([
-		{
-			number: 1,
-			status: 0,
-			currentParty: -1,
-			parties: [],
-		},
-		{
-			number: 2,
-			status: 0,
-			currentParty: -1,
-			parties: [],
-		},
-		{
-			number: 3,
-			status: 0,
-			currentParty: -1,
-			parties: [],
-		},
-	])
+	const [rooms, setRooms] = useState([])
+
+	useEffect(() => {
+		if (rooms.length === 0) {
+			fetch('http://localhost:3000', {
+				method: 'GET',
+				headers: {
+					'x-api-key': 'apples',
+				},
+			})
+				.then((res) => res.json())
+				.then((res) => console.log(res))
+				.then((res) => setRooms(res))
+		} else {
+			fetch('http://localhost:3000', {
+				method: 'POST',
+				headers: {
+					'x-api-key': 'apples',
+				},
+				body: rooms,
+			})
+				.then((res) => res.json())
+				.then((res) => setRooms(res))
+		}
+	}, [rooms])
 
 	// `currentParty` is the index of the currently assigned party from the `parties` array
 	// -1 means no party is currently assigned
