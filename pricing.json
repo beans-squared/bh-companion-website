@@ -491,5 +491,127 @@
 				]
 			}
 		]
+	},
+	{
+		"id": "merch",
+		"title": "Snacks, Drinks and Merchanise",
+		"sections": [
+			{
+				"title": "Snacks & Drinks",
+				"subsections": [
+					{
+						"title": "Drinks",
+						"items": [
+							{
+								"key": "Bottled Water",
+								"value": "$2"
+							},
+							{
+								"key": "Bottled Soda",
+								"value": "$2"
+							},
+							{
+								"key": "Cup of Coffee",
+								"value": "$2"
+							},
+							{
+								"key": "Cup of Tea",
+								"value": "$2"
+							},
+							{
+								"key": "Energy Drink",
+								"value": "$3"
+							},
+							{
+								"key": "64oz Pitcher of Water",
+								"value": "$1"
+							},
+							{
+								"key": "64oz Pitcher of Soda",
+								"value": "$6"
+							},
+							{
+								"key": "Case of Water",
+								"value": "$12"
+							}
+						]
+					},
+					{
+						"title": "Snacks",
+						"items": [
+							{
+								"key": "Chips",
+								"value": "$1"
+							},
+							{
+								"key": "Rice Krispies Treat",
+								"value": "$1"
+							},
+							{
+								"key": "Peanuts",
+								"value": "$1"
+							},
+							{
+								"key": "Gummy Burgers",
+								"value": "3 for $1"
+							},
+							{
+								"key": "Candy",
+								"value": "$2"
+							}
+						]
+					},
+					{
+						"title": "Merchandise",
+						"items": [
+							{
+								"key": "T-Shirt (all sizes)",
+								"value": "$20"
+							},
+							{
+								"key": "Hoodie (all sizes)",
+								"value": "$43"
+							},
+							{
+								"key": "Beanie",
+								"value": "$17.50"
+							},
+							{
+								"key": "Baseball Cap",
+								"value": "$30"
+							},
+							{
+								"key": "Battle Pack",
+								"value": "$8"
+							},
+							{
+								"key": "Water Bottle",
+								"value": "$5"
+							},
+							{
+								"key": "Mousepad",
+								"value": "$10"
+							},
+							{
+								"key": "Wristband",
+								"value": "$1.25"
+							},
+							{
+								"key": "Sticker",
+								"value": "$0.75"
+							},
+							{
+								"key": "Tattoo",
+								"value": "$0.50"
+							},
+							{
+								"key": "Dog Tag",
+								"value": "$1.50"
+							}
+						]
+					}
+				]
+			}
+		]
 	}
 ]
