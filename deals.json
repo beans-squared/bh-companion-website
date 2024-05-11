@@ -1,16 +1,47 @@
 [
 	{
 		"draft": false,
-		"title": "Valentine's Day Deal",
-		"description": "All tickets 50% off.",
-		"startDate": "2024-02-14",
-		"endDate": "2024-02-16"
+		"title": "Student Deal",
+		"description": "Discounted tickets for students on weekdays.",
+		"timePeriod": "WEDNESDAYS & THURSDAYS"
 	},
 	{
 		"draft": false,
-		"title": "President's Day - Stay and Play",
-		"description": "Play two sessions for the price of one, or four sessions for the price of two.",
-		"startDate": "2024-02-19",
-		"endDate": "2024-02-19"
+		"title": "Summer League 2024",
+		"description": "Summer League sign-ups are starting. See the front desk for details.",
+		"timePeriod": "SUMMER 2024"
+	},
+	{
+		"draft": false,
+		"title": "Reload Cards",
+		"description": "$20 for a free game card that expires in 30 days.",
+		"timePeriod": "YEAR-ROUND"
+	},
+	{
+		"draft": false,
+		"title": "Battle House Boot Camps",
+		"description": "Summer camp sign-ups are starting. See the front desk for details.",
+		"timePeriod": "SUMMER 2024"
+	},
+	{
+		"draft": false,
+		"title": "Friday Face-Off",
+		"description": "Get $10 off all Friday battles.",
+		"startDate": "2024-05-01",
+		"endDate": "2024-05-31"
+	},
+	{
+		"draft": false,
+		"title": "Memorial Day Weekend",
+		"description": "Stay and Play - get two battles for the price of one, or four battles for the price of two.",
+		"startDate": "2024-05-24",
+		"endDate": "2024-05-27"
+	},
+	{
+		"draft": false,
+		"title": "Play All Day",
+		"description": "Play for an entire day for just $34! Wednesdays & Thursdays in May.",
+		"startDate": "2024-05-01",
+		"endDate": "2024-05-31"
 	}
 ]

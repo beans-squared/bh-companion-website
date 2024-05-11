@@ -50,13 +50,13 @@ export default function App() {
 				</button>
 			</Link>
 			<Link to={'session-manager'}>
-				<button style={styles.homepageButton} className="animate-8">
+				<button style={styles.homepageButton} className="animate-8" disabled>
 					<PlayIcon />
 					RUN A SESSION
 				</button>
 			</Link>
 			<Link to={'spectator-view'}>
-				<button style={styles.homepageButton} className="animate-9">
+				<button style={styles.homepageButton} className="animate-9" disabled>
 					<TvIcon />
 					OPEN SPECTATOR VIEW
 				</button>
