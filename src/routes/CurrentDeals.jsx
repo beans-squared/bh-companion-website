@@ -14,6 +14,7 @@ export default function CurrentDeals() {
 		} else if (startDate < Date.now() && endDate > Date.now()) {
 			return 'ONGOING'
 		} else if (endDate < Date.now()) {
+			console.log(deal.title, endDate, new Date(endDate), Date.now())
 			return 'EXPIRED'
 		} else {
 			return timePeriod
