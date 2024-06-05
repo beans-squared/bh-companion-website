@@ -41,6 +41,7 @@ export default function CurrentDeals() {
 									margin: '1rem',
 									padding: '1rem',
 									backgroundColor: Date.now() > new Date(deal.startDate).valueOf() && Date.now() < new Date(deal.endDate).valueOf() ? '#fedd0423' : 'none',
+									opacity: Date.now() > new Date(deal.endDate).valueOf() ? '25%' : '100%',
 								}}
 							>
 								<h3 style={{ fontSize: '1rem', color: '#b3b3b3' }}>
