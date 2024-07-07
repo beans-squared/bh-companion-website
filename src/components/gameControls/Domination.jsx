@@ -11,9 +11,9 @@ export function Domination({ gameProperties, sendJsonMessage }) {
 		sendJsonMessage({
 			command: 'update_current_game_data',
 			data: {
-				totalCubes: event.target.totalCubes.value,
-				blueCubes: event.target.blueCubes.value,
-				redCubes: event.target.redCubes.value,
+				totalCubes: totalCubes,
+				blueCubes: blueCubes,
+				redCubes: redCubes,
 			},
 		})
 	}
@@ -54,7 +54,15 @@ export function Domination({ gameProperties, sendJsonMessage }) {
 							</button>
 						</div>
 					</div>
-					<button onClick={() => sendJsonMessage({ command: 'update_current_game_data', data: { gameStage: 'ONGOING' } })} style={{ margin: '0 auto' }}>
+					<button
+						onClick={() =>
+							sendJsonMessage({
+								command: 'update_current_game_data',
+								data: { gameStage: 'ONGOING', totalCubes: totalCubes, blueCubes: blueCubes, redCubes: redCubes },
+							})
+						}
+						style={{ margin: '0 auto' }}
+					>
 						START GAME
 					</button>
 				</div>
