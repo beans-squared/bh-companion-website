@@ -5,5 +5,26 @@
 		"description": "Get $10 off all Friday battles.",
 		"startDate": "2024-05-01",
 		"endDate": "2024-08-31"
+	},
+	{
+		"draft": false,
+		"title": "Fourth of July",
+		"description": "Use promo code \"1776\" to get $17.76 off all tickets.",
+		"startDate": "2024-07-04",
+		"endDate": "2024-07-07"
+	},
+	{
+		"draft": false,
+		"title": "Stay and Play",
+		"description": "Play two battles for the price of one, or four battles for the price of two.",
+		"startDate": "2024-07-04",
+		"endDate": "2024-07-07"
+	},
+	{
+		"draft": false,
+		"title": "Play All Day",
+		"description": "Play for a full day (every session) for $40.",
+		"startDate": "2024-05-01",
+		"endDate": "2024-08-31"
 	}
 ]
