@@ -1,6 +1,13 @@
 [
 	{
 		"draft": false,
+		"title": "Weekend Student Deal",
+		"description": "Student pricing available on tickets Saturday and Sunday.",
+		"startDate": "2024-09-14",
+		"endDate": "2024-09-15"
+	},
+	{
+		"draft": false,
 		"title": "Friday Face-Off",
 		"description": "Get $10 off all Friday battles.",
 		"startDate": "2024-05-01",
