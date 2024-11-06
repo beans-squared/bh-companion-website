@@ -9,15 +9,22 @@
 	{
 		"draft": false,
 		"title": "Vote and get a BOGO",
-		"description": "People wearing an \"I Voted\" sticker during election week (11/4-11/8) can recieve a BOGO card.",
-		"startDate": "2024-11-13",
-		"endDate": "2024-11-15"
+		"description": "People wearing an \"I Voted\" sticker during election week can recieve a BOGO card.",
+		"startDate": "2024-11-04",
+		"endDate": "2024-11-08"
 	},
 	{
 		"draft": false,
-		"title": "Extended Hours for Thanksgiving Break",
+		"title": "Thanksgiving Break",
 		"description": "Open Wed 11/27 and Fri 11/29 11:00am-8:45pm (closed Thanksgiving Day)",
 		"startDate": "2024-11-27",
 		"endDate": "2024-11-29"
+	},
+	{
+		"draft": false,
+		"title": "Winter Break",
+		"description": "Open every day 11:00am-11:15pm from Dec 12/23 to Jan 1/8 (closed Christmas Eve & Day)",
+		"startDate": "2024-12-23",
+		"endDate": "2025-01-08"
 	}
 ]
