@@ -1,6 +1,13 @@
 [
 	{
 		"draft": false,
+		"title": "Early Bird Special",
+		"description": "On events booked on a Monday through Thursday, get 10% off and free fountain drinks.",
+		"startDate": "2024-11-01",
+		"endDate": "2024-11-30"
+	},
+	{
+		"draft": false,
 		"title": "Veteran's Day Deal",
 		"description": "Active duty military and veterans play for only $10.",
 		"startDate": "2024-11-13",
@@ -8,16 +15,23 @@
 	},
 	{
 		"draft": false,
-		"title": "Vote and get a BOGO",
-		"description": "People wearing an \"I Voted\" sticker during election week can recieve a BOGO card.",
-		"startDate": "2024-11-04",
-		"endDate": "2024-11-08"
+		"title": "Thanksgiving Break",
+		"description": "Open Wed 11/27 11:00am-8:45pm (closed Thanksgiving Day)",
+		"startDate": "2024-11-27",
+		"endDate": "2024-11-28"
 	},
 	{
 		"draft": false,
-		"title": "Thanksgiving Break",
-		"description": "Open Wed 11/27 and Fri 11/29 11:00am-8:45pm (closed Thanksgiving Day)",
-		"startDate": "2024-11-27",
+		"title": "Black Ops Friday Deal",
+		"description": "Get $10 off tickets using the code. Expires 11/22",
+		"startDate": "2024-11-22",
+		"endDate": "2024-11-22"
+	},
+	{
+		"draft": false,
+		"title": "Black Ops Friday Hours",
+		"description": "Open 8:15am-11:15pm",
+		"startDate": "2024-11-29",
 		"endDate": "2024-11-29"
 	},
 	{
