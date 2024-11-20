@@ -1,314 +1,83 @@
-import { useState } from 'react'
-import prices from '../../pricing.json'
+import { useState, useEffect } from 'react'
+import { supabase } from '../supabaseClient'
 
 export default function PricingReference() {
+	const [prices, setPrices] = useState([])
+	const [pages, setPages] = useState(null)
 	const [pageSelection, setPageSelection] = useState(prices[0])
 
-	function currentPriceChart() {
-		if (chartSelection === 'sessionPasses') {
-			return (
-				<section className="price-container">
-					<h1>Individual Tickets</h1>
-					<h2>Standard Admission</h2>
-					<section className="prices">
-						<p>
-							<span>One Battle (1.0 Hour)</span>
-							<span>$34</span>
-						</p>
-						<p>
-							<span>Two Battles (2.25 Hours)</span>
-							<span>$44</span>
-						</p>
-						<p>
-							<span>Three Battles (3.5 Hours)</span>
-							<span>$54</span>
-						</p>
-						<p>
-							<span>Four Battles (4.75 Hours)</span>
-							<span>$64</span>
-						</p>
-						<p>
-							<span>Additional Battle (1.0 Hour)</span>
-							<span>$10</span>
-						</p>
-					</section>
-					<h2>Friends of Battle House</h2>
-					<section className="prices">
-						<p>
-							<span>One Battle (1.0 Hour)</span>
-							<span>$17.50</span>
-						</p>
-						<p>
-							<span>Two Battles (2.25 Hours)</span>
-							<span>$27.50</span>
-						</p>
-						<p>
-							<span>Three Battles (3.5 Hours)</span>
-							<span>$37.50</span>
-						</p>
-						<p>
-							<span>Four Battles (4.75 Hours)</span>
-							<span>$47.50</span>
-						</p>
-					</section>
-					<h2>Student Special (Wednesday & Thursday Only)</h2>
-					<section className="prices">
-						<p>
-							<span>One Battle (1.0 Hour)</span>
-							<span>$22</span>
-						</p>
-						<p>
-							<span>Two Battles (2.25 Hours)</span>
-							<span>$33</span>
-						</p>
-						<p>
-							<span>Three Battles (3.5 Hours)</span>
-							<span>$44</span>
-						</p>
-						<p>
-							<span>Four Battles (4.75 Hours)</span>
-							<span>$55</span>
-						</p>
-					</section>
-				</section>
-			)
-		} else if (chartSelection === 'privateEvents') {
-			return (
-				<section className="price-container">
-					<h1>Mid-Week Off Hours</h1>
-					<h2>1.0 Hour</h2>
-					<section className="prices">
-						<p>
-							<span>Battle Outside Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$458</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>12</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$34</span>
-						</p>
-					</section>
-					<h2>2.0 Hours</h2>
-					<section className="prices">
-						<p>
-							<span>Battle Outside Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$578</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>12</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$44</span>
-						</p>
-					</section>
-					<h1>Organized School & Youth Groups</h1>
-					<h2>1.0 Hour</h2>
-					<section className="prices">
-						<p>
-							<span>Battle Outside Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$500</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>20</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$25</span>
-						</p>
-					</section>
-					<h2>2.0 Hours</h2>
-					<section className="prices">
-						<p>
-							<span>Battle Outside Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$700</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>20</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$35</span>
-						</p>
-					</section>
-					<h1>Wednesday & Thursday</h1>
-					<h2>1.0 Hour</h2>
-					<section className="prices">
-						<p>
-							<span>Battle During Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$730</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>20</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$34</span>
-						</p>
-					</section>
-					<h2>2.0 Hours</h2>
-					<section className="prices">
-						<p>
-							<span>Battle During Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$930</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>20</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$44</span>
-						</p>
-					</section>
-					<h1>Friday, Saturday & Sunday</h1>
-					<h2>1.0 Hour</h2>
-					<section className="prices">
-						<p>
-							<span>Battle During Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$1,070</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>30</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$34</span>
-						</p>
-					</section>
-					<h2>2.0 Hour</h2>
-					<section className="prices">
-						<p>
-							<span>Battle During Open Hours</span>
-						</p>
-						<p>
-							<span>Minimum Deposit</span>
-							<span>$1,370</span>
-						</p>
-						<p>
-							<span>Minimum Players</span>
-							<span>30</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$44</span>
-						</p>
-					</section>
-				</section>
-			)
-		} else if (chartSelection === 'events') {
-			return (
-				<section className="price-container">
-					<h1>Standard Pricing</h1>
-					<h2>Recon 1.1</h2>
-					<section className="prices">
-						<p>
-							<span>One Battle (1.0 Hour)</span>
-							<span>$200</span>
-						</p>
-						<p>
-							<span>Included Tickets</span>
-							<span>5</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$34</span>
-						</p>
-						<p>
-							<span>Event Space After Battle</span>
-							<span>30 minutes</span>
-						</p>
-					</section>
-					<h2>Recon 1.2</h2>
-					<section className="prices">
-						<p>
-							<span>Two Battles (2.25 Hours)</span>
-							<span>$250</span>
-						</p>
-						<p>
-							<span>Included Tickets</span>
-							<span>5</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$44</span>
-						</p>
-						<p>
-							<span>Event Space After Battle</span>
-							<span>30 minutes</span>
-						</p>
-					</section>
+	useEffect(() => {
+		fetchPrices().then((prices) => {
+			const pricing = []
 
-					<h1>Military & First Responders</h1>
-					<h2>Recon 1.1</h2>
-					<section className="prices">
-						<p>
-							<span>One Battle (1.0 Hour)</span>
-							<span>$180</span>
-						</p>
-						<p>
-							<span>Included Tickets</span>
-							<span>5</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$30</span>
-						</p>
-						<p>
-							<span>Event Space After Battle</span>
-							<span>30 minutes</span>
-						</p>
-					</section>
-					<h2>Recon 1.2</h2>
-					<section className="prices">
-						<p>
-							<span>Two Battles (2.25 Hour)</span>
-							<span>$230</span>
-						</p>
-						<p>
-							<span>Included Tickets</span>
-							<span>5</span>
-						</p>
-						<p>
-							<span>Additional Players</span>
-							<span>$40</span>
-						</p>
-						<p>
-							<span>Event Space After Battle</span>
-							<span>30 minutes</span>
-						</p>
-					</section>
-				</section>
-			)
+			console.log('RETURNED PRICING FROM THE BACKEND: ', prices)
+
+			// get all unique pages
+			const pages = []
+			for (const price of prices) {
+				if (!pages.some((element) => element.title === price.page)) {
+					console.log(`Adding page ${price.page}`)
+					pages.push({ title: price.page, sections: [] })
+				}
+			}
+
+			// get all sections for each page
+			for (const page of pages) {
+				for (const price of prices) {
+					if (!page.sections.some((element) => element.title === price.section) && page.title === price.page) {
+						console.log(`Adding section ${price.section} to page ${page.title}`)
+						page.sections.push({ title: price.section, subsections: [] })
+					}
+				}
+			}
+
+			// get all subsections for each page section
+			for (const page of pages) {
+				for (const section of page.sections) {
+					for (const price of prices) {
+						if (!section.subsections.some((element) => (element.title === price.subsection)) && section.title === price.section && page.title === price.page) {
+							console.log(`Adding subsection ${price.subsection} to section ${section.title} on page ${page.title}`)
+							section.subsections.push({ title: price.subsection, items: [] })
+						}
+					}
+				}
+			}
+
+			// add items
+			for (const page of pages) {
+				for (const section of page.sections) {
+					for (const subsection of section.subsections) {
+						for (const price of prices) {
+							if (
+								!subsection.items.some((element) => element.item === price.item) &&
+								subsection.title === price.subsection &&
+								section.title === price.section &&
+								page.title === price.page
+							) {
+								console.log(`Adding item-value pair ${price.item}-${price.value} to subsection ${subsection.title} on page ${page.title}`)
+								subsection.items.push({ key: price.item, value: price.value })
+							}
+						}
+					}
+				}
+			}
+
+			console.log(pages)
+
+			setPrices(pages)
+			setPageSelection(pages[0])
+		})
+	}, [])
+
+	async function fetchPrices() {
+		try {
+			const { data, error } = await supabase.from('prices').select()
+			if (error) {
+				throw error
+			}
+			return data
+		} catch (error) {
+			console.log('Error fetching deals: ', error.message)
 		}
 	}
 
@@ -316,32 +85,38 @@ export default function PricingReference() {
 		<div style={{ width: '1280px', maxWidth: '90vw', display: 'flex', flexDirection: 'column' }} className="animate-1">
 			<select
 				style={{ margin: '1rem 0', fontSize: '1.25rem', fontWeight: 'bold', color: 'black', backgroundColor: 'var(--color-brand)' }}
-				onChange={(event) => setPageSelection(prices.find((page) => page.id === event.target.value))}
+				onChange={(event) => setPageSelection(prices.find((page) => page.title === event.target.value))}
 			>
 				{prices.map((page) => (
-					<option value={page.id}>{page.title}</option>
+					<option value={page.title}>{page.title}</option>
 				))}
 			</select>
 			<section style={{ border: '1px solid gray', marginBottom: '1rem' }}>
-				{pageSelection.sections.map((section) => (
-					<section>
-						<h1 style={{ paddingLeft: '0.5rem', fontSize: '1.5rem' }}>{section.title}</h1>
-						{section.subsections.map((subsection) => (
-							<div>
-								<h2 style={{ paddingLeft: '1rem', borderTop: '1px solid gray', fontFamily: 'Poppins' }}>{subsection.title}</h2>
-								{subsection.items.map((item) => (
-									<p
-										style={{ padding: '0.25rem 1rem 0.25rem 2rem', display: 'flex', justifyContent: 'space-between', fontFamily: 'Poppins' }}
-										className="pricing-reference-item-highlight"
-									>
-										<span>{item.key}</span>
-										<span>{item.value}</span>
-									</p>
+				{prices.length > 0 ? (
+					<>
+						{pageSelection.sections.map((section) => (
+							<section>
+								<h1 style={{ paddingLeft: '0.5rem', fontSize: '1.5rem' }}>{section.title}</h1>
+								{section.subsections.map((subsection) => (
+									<div>
+										<h2 style={{ paddingLeft: '1rem', borderTop: '1px solid gray', fontFamily: 'Poppins' }}>{subsection.title}</h2>
+										{subsection.items.map((item) => (
+											<p
+												style={{ padding: '0.25rem 1rem 0.25rem 2rem', display: 'flex', justifyContent: 'space-between', fontFamily: 'Poppins' }}
+												className="pricing-reference-item-highlight"
+											>
+												<span>{item.key}</span>
+												<span>{item.value}</span>
+											</p>
+										))}
+									</div>
 								))}
-							</div>
+							</section>
 						))}
-					</section>
-				))}
+					</>
+				) : (
+					<></>
+				)}
 			</section>
 		</div>
 	)
