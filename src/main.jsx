@@ -1,23 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
-import ErrorPage from './ErrorPage';
-import EquipmentReporter from './routes/EquipmentReporter';
-import PlaylistGenerator from './routes/PlaylistGenerator';
-import RoomManager from './routes/RoomManager';
-import SessionManager from './routes/SessionManager';
-import SpectatorView from './routes/SpectatorView';
-import CurrentDeals from './routes/CurrentDeals';
-import DeepCleanList from './routes/DeepCleanList';
-import './root.css';
-import PricingReference from './routes/PricingReference';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import App from './App'
+import ErrorPage from './ErrorPage'
+import EquipmentReporter from './routes/EquipmentReporter'
+import PlaylistGenerator from './routes/PlaylistGenerator'
+import RoomManager from './routes/RoomManager'
+import SessionManager from './routes/SessionManager'
+import SpectatorView from './routes/SpectatorView'
+import CurrentDeals from './routes/CurrentDeals'
+import DeepCleanList from './routes/DeepCleanList'
+import './root.css'
+import PricingReference from './routes/PricingReference'
+import Login from './routes/Login'
+import Agenda from './routes/Agenda'
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <App />,
 		errorElement: <ErrorPage />,
+	},
+	{
+		path: 'login',
+		element: <Login />,
+	},
+	{
+		path: 'agenda',
+		element: <Agenda />,
 	},
 	{
 		path: 'reporter',
@@ -51,10 +61,10 @@ const router = createBrowserRouter([
 		path: 'pricing-reference',
 		element: <PricingReference />,
 	},
-]);
+])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<RouterProvider router={router} />
 	</React.StrictMode>
-);
+)

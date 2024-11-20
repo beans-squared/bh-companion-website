@@ -2,11 +2,10 @@ export default function Play() {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			class="icon icon-tabler icon-tabler-receipt-2"
 			width="24"
 			height="24"
 			viewBox="0 0 24 24"
-			stroke-width="1.5"
+			// stroke-width="1.5"
 			stroke="currentColor"
 			fill="none"
 			stroke-linecap="round"

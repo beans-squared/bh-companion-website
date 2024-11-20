@@ -9,8 +9,8 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@supabase/supabase-js": "^2.45.4",
 		"dayjs": "^1.11.10",
-		"dotenv": "^16.3.1",
 		"localforage": "^1.10.0",
 		"match-sorter": "^6.3.1",
 		"node-sass": "^9.0.0",
