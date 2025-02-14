@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Playlist from './Playlist'
-import allGames from '../../games.json'
+import { supabase } from '../supabaseClient'
 
 export default function PlaylistGenerator() {
-	const [sessionLength, setSessionLength] = useState(getDefaultHourValue())
+	const [allGames, setAllGames] = useState([])
+	const [sessionLength, setSessionLength] = useState(1)
 	const [playerCount, setPlayerCount] = useState(null)
 	const [avgPlayerAge, setAvgPlayerAge] = useState(null)
 	const [avgPlayerExp, setAvgPlayerExp] = useState(null)
@@ -12,13 +13,44 @@ export default function PlaylistGenerator() {
 
 	const [playlist, setPlaylist] = useState([])
 
+	useEffect(() => {
+		fetchGames().then((games) => {
+			setAllGames(games)
+		})
+	}, [])
+
 	function handleSubmit(event) {
 		event.preventDefault()
 
 		const playlist = generatePlaylist(sessionLength, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames)
 
+		console.log('Generated playlist:', playlist)
+
 		setPlaylist(playlist)
 		setFormSubmitted(true)
+	}
+
+	async function fetchGames() {
+		try {
+			const { data, error } = await supabase.from('games').select()
+			if (error) {
+				throw error
+			}
+			return data
+		} catch (error) {
+			console.log('Error fetching games: ', error.message)
+		}
+	}
+
+	function generatePlaylist(sessionLength, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames) {
+		const sessionTotalSeconds = sessionLength * 60 * 60 - 900
+		let remainingSeconds = sessionTotalSeconds
+		let chosenGames = []
+		let chosenCategories = []
+
+		const gameList = chooseGames(remainingSeconds, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames, allGames, chosenGames, chosenCategories)
+
+		return gameList
 	}
 
 	return (
@@ -28,20 +60,14 @@ export default function PlaylistGenerator() {
 					<label className="form-label">SESSION LENGTH</label>
 					<div className="button-options">
 						<div
-							style={{ color: 'black', backgroundColor: 'var(--color-brand)', padding: '1rem', fontSize: '1.2rem', cursor: 'pointer' }}
+							style={{ color: 'black', backgroundColor: 'var(--color-brand)', padding: '1rem', margin: '1rem 0', fontSize: '1.2rem', cursor: 'pointer' }}
 							onClick={() => setSessionLength(1)}
 						>
 							1 HOUR
 						</div>
 						<div
 							style={{ color: 'black', backgroundColor: 'var(--color-brand)', padding: '1rem', fontSize: '1.2rem', cursor: 'pointer' }}
-							onClick={() => setSessionLength(1.75)}
-						>
-							1.75 HOURS
-						</div>
-						<div
-							style={{ color: 'black', backgroundColor: 'var(--color-brand)', padding: '1rem', fontSize: '1.2rem', cursor: 'pointer' }}
-							onClick={() => setSessionLength(2)}
+							onClick={() => setSessionLength(2.25)}
 						>
 							2 HOURS
 						</div>
@@ -117,52 +143,40 @@ export default function PlaylistGenerator() {
 	)
 }
 
-function getDefaultHourValue() {
-	const day = new Date().getDay()
-	if (day === 0 || day === 4) {
-		return 1
-	} else {
-		return 1.75
-	}
-}
-
-function generatePlaylist(sessionLength, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames) {
-	const sessionTotalMinutes = sessionLength * 60 - 15
-	let remainingMinutes = sessionTotalMinutes
-	let chosenGames = []
-	let chosenCategories = []
-
-	const gameList = chooseGames(remainingMinutes, playerCount, avgPlayerAge, avgPlayerExp, allowExperimentalGames, allGames, chosenGames, chosenCategories)
-
-	return gameList
-}
-
-function chooseGames(remainingMinutes, players, age, experience, allowExperimental, games, chosenGames, chosenCategories) {
+function chooseGames(remainingSeconds, players, age, experience, allowExperimental, games, chosenGames, chosenCategories) {
+	console.log('Starting list of games:', games)
 	// Filter for remaining time in session
 	games = games.filter((game) => {
-		const INITIAL_BRIEFING_TIME = 4
-		const SWAP_BRIEFING_TIME = 2
+		const INITIAL_BRIEFING_TIME = 240
+		const SWAP_BRIEFING_TIME = 120
 
-		const gameTime = game.timeLimit + (game.swapSides ? game.timeLimit + SWAP_BRIEFING_TIME : 0) + INITIAL_BRIEFING_TIME
+		const gameTime = game.max_time_s + (game.swap_sides ? game.max_time_s + SWAP_BRIEFING_TIME : 0) + INITIAL_BRIEFING_TIME
 		// (Game's maximum time) + if the game swaps sides (game's maximum time + 2) + (4) for briefing time
-		return gameTime < remainingMinutes
+		return gameTime < remainingSeconds
 	})
 
+	console.log(`Games after filtering for remaining time in session (${Math.round(remainingSeconds / 60)}m):`, games)
+
 	// Filter for experimental games
-	if (!allowExperimental) games = games.filter((game) => !game.experimental)
+	if (!allowExperimental) games = games.filter((game) => !game.in_testing)
+
+	console.log('Games after filtering for games in testing:', games)
 
 	// Filter for number of players
-	// will take game's ideal player count and set min as ideal-15, min 2 and max as ideal+15, max 60
+	// will take game's ideal player count and set min as ideal-15, min 2 and max as ideal+15, max 80
 	games = games.filter((game) => {
-		let min = game.minPlayers
+		let min = game.min_players
 		if (min < 2) min = 2
-		let max = game.maxPlayers
-		if (max > 60) max = 60
+		let max = game.max_players
+		if (max > 80) max = 80
 
 		return players >= min && players <= max
 	})
 
+	console.log('Games after filtering for player count:', games)
+
 	// Filter for appropriate difficulty
+	// Games have a difficulty score between 0-3 as represented in the backend
 	// Youth = 0, Teens = 1, Adults = 2
 	// First Timers = 0, Familiar = 1, Experienced = 2, Expert = 3
 	// Add age and experience values
@@ -170,13 +184,15 @@ function chooseGames(remainingMinutes, players, age, experience, allowExperiment
 	games = games.filter((game) => {
 		const diffVal = age + experience
 		if (diffVal === 0 || diffVal === 1) {
-			return game.difficulty === 'low'
+			return game.difficulty <= 1
 		} else if (diffVal === 2 || diffVal === 3) {
-			return game.difficulty === 'low' || game.difficulty === 'medium'
+			return game.difficulty <= 2
 		} else {
-			return game.difficulty === 'medium' || game.difficulty === 'high'
+			return game.difficulty <= 3
 		}
 	})
+
+	console.log('Games after filtering for difficulty:', games)
 
 	// Filter for duplicate categories
 	let filteredGames = games
@@ -190,16 +206,20 @@ function chooseGames(remainingMinutes, players, age, experience, allowExperiment
 	}
 	games = filteredGames
 
+	console.log('Games after filtering for duplicate categories:', games)
+
 	if (games.length === 0) return chosenGames
 	const rand = Math.floor(Math.random() * games.length)
 	const selectedGame = games[rand]
 	games = games.filter((game) => game.name !== selectedGame.name)
 
+	console.log(`Added ${selectedGame.name} to the playlist`)
+
 	chosenGames.push(selectedGame)
 	chosenCategories.push(selectedGame.category)
 
 	return chooseGames(
-		remainingMinutes - (selectedGame.timeLimit + (selectedGame.swapSides ? selectedGame.timeLimit + 2 : 0) + 4),
+		remainingSeconds - (selectedGame.max_time_s + (selectedGame.swap_sides ? selectedGame.max_time_s + 2 : 0) + 4),
 		players,
 		age,
 		experience,
