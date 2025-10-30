@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import { supabase } from '../supabaseClient'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
-	const [email, setEmail] = useState(null)
-	const [sent, setSent] = useState(false)
+	let navigate = useNavigate()
 
-	async function signInWithEmail() {
-		const { data, error } = await supabase.auth.signInWithOtp({
+	const [email, setEmail] = useState(null)
+	const [password, setPassword] = useState(null)
+
+	async function signIn() {
+		const { data, error } = await supabase.auth.signInWithPassword({
 			email: email,
-			options: {
-				emailRedirectTo: 'http://localhost:5173',
-			},
+			password: password,
 		})
 	}
 
@@ -25,54 +26,49 @@ export default function Login() {
 				marginTop: '2rem',
 			}}
 		>
-			{!sent ? (
-				<div>
-					<input
-						style={{
-							width: '400px',
-							boxSizing: 'border-box',
-						}}
-						type="email"
-						name="email"
-						placeholder="email"
-						onChange={(event) => setEmail(event.target.value)}
-					/>
-					<button
-						style={{
-							width: '400px',
-							display: 'flex',
-							gap: '1rem',
-							marginTop: '1rem',
-						}}
-						onClick={() => {
-							signInWithEmail()
-							setSent(true)
-						}}
-					>
-						SIGN IN
-					</button>
-				</div>
-			) : (
-				<div
+			<div>
+				<input
 					style={{
-						border: '2px solid #fedd04',
-						padding: '1rem',
+						width: '400px',
+						boxSizing: 'border-box',
+					}}
+					type="email"
+					name="email"
+					placeholder="email"
+					onChange={(event) => setEmail(event.target.value)}
+				/>
+				<input
+					style={{
+						width: '400px',
+						boxSizing: 'border-box',
+						marginTop: '1rem',
+					}}
+					type="password"
+					name="password"
+					placeholder="password"
+					onChange={(event) => setPassword(event.target.value)}
+					onKeyDown={(e) => {
+						if (e.key === 'Enter') {
+							signIn()
+							navigate('/')
+						}
+					}}
+				/>
+				<button
+					style={{
+						width: '400px',
+						display: 'flex',
+						gap: '1rem',
+						marginTop: '1rem',
+					}}
+					onClick={() => {
+						signIn()
+						navigate('/')
 					}}
 				>
-					<p
-						style={{
-							width: '400px',
-							display: 'flex',
-							gap: '1rem',
-							justifyContent: 'center',
-							fontSize: '1.5rem',
-							fontFamily: 'Poppins',
-						}}
-					>
-						Email sent! Check your inbox.
-					</p>
-				</div>
-			)}
+					SIGN IN
+				</button>
+			</div>
 		</div>
 	)
 }
