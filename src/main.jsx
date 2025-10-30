@@ -14,6 +14,8 @@ import './root.css'
 import PricingReference from './routes/PricingReference'
 import Login from './routes/Login'
 import Agenda from './routes/Agenda'
+import GunReserver from './routes/GunReserver'
+import Soundboard from './routes/Soundboard'
 
 const router = createBrowserRouter([
 	{
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
 	{
 		path: 'pricing-reference',
 		element: <PricingReference />,
+	},
+	{
+		path: 'soundboard',
+		element: <Soundboard />,
 	},
 ])
 
