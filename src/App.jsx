@@ -64,45 +64,44 @@ export default function App() {
 					PRICING REFERENCE
 				</button>
 			</Link>
+			<Link to={'soundboard'}>
+				<button style={styles.homepageButton} className="animate-7">
+					<SoundboardIcon />
+					SOUNDBOARD
+				</button>
+			</Link>
 			{/* <Link to={'cleaning-list'}>
-				<button style={styles.homepageButton} className="animate-7" disabled>
+				<button style={styles.homepageButton} className="animate-8" disabled>
 					<SprayIcon />
 					CLEANING LIST
 				</button>
 			</Link> */}
 			{/* <Link to={'room-manager'}>
-				<button style={styles.homepageButton} className="animate-8" disabled>
+				<button style={styles.homepageButton} className="animate-9" disabled>
 					<PartyIcon />
 					MANAGE PARTY ROOMS
 				</button>
 			</Link> */}
 			{/* <Link to={'session-manager'}>
-				<button style={styles.homepageButton} className="animate-9" disabled>
+				<button style={styles.homepageButton} className="animate-10" disabled>
 					<PlayIcon />
 					RUN A SESSION
 				</button>
 			</Link> */}
 			{/* <Link to={'spectator-view'}>
-				<button style={styles.homepageButton} className="animate-10" disabled>
+				<button style={styles.homepageButton} className="animate-11" disabled>
 					<TvIcon />
 					OPEN SPECTATOR VIEW
 				</button>
 			</Link> */}
 			{/* <Link to={'arena-editor'}>
-				<button style={styles.homepageButton} className="animate-11" disabled>
+				<button style={styles.homepageButton} className="animate-12" disabled>
 					<MapIcon />
 					VIRTUAL ARENA MAP
 				</button>
 			</Link> */}
 			<hr style={{ width: '100%' }} />
-			{!session ? (
-				<Link to={'login'}>
-					<button style={styles.homepageButton} className="animate-1">
-						<KeyIcon />
-						SIGN IN
-					</button>
-				</Link>
-			) : (
+			{session && userData ? (
 				<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
 					<h2
 						className="animate-1"
