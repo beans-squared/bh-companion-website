@@ -32,6 +32,10 @@ const router = createBrowserRouter([
 		element: <Agenda />,
 	},
 	{
+		path: 'gun-reserver',
+		element: <GunReserver />,
+	},
+	{
 		path: 'reporter',
 		element: <EquipmentReporter />,
 	},

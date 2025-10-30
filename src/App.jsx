@@ -12,13 +12,22 @@ import PriceIcon from './icons/Price'
 import MapIcon from './icons/Map'
 import CalendarIcon from './icons/Calendar'
 import KeyIcon from './icons/Key'
+import SoundboardIcon from './icons/Soundboard'
 
 export default function App() {
 	const [session, setSession] = useState(null)
+	const [userData, setUserData] = useState(null)
 
 	useEffect(() => {
 		supabase.auth.getSession().then(({ data: { session } }) => {
 			setSession(session)
+			supabase
+				.from('user_data')
+				.select()
+				.eq('id', session.user.id)
+				.then(({ data }) => {
+					setUserData(data[0])
+				})
 		})
 
 		supabase.auth.onAuthStateChange((_event, session) => {
@@ -35,9 +44,15 @@ export default function App() {
 			<img src="logo.png" alt="the battle house logo" style={styles.homepage.logo} className="animate-1" />
 
 			{/* <Link to={'agenda'}>
-				<button style={styles.homepageButton} className="animate-2" disabled>
+				<button style={styles.homepageButton} className="animate-2">
 					<CalendarIcon />
 					MY AGENDA
+				</button>
+			</Link> */}
+			{/* <Link to={'gun-reserver'}>
+				<button style={styles.homepageButton} className="animate-2">
+					<CalendarIcon />
+					GUN RESERVER
 				</button>
 			</Link> */}
 			<Link to={'generator'}>
@@ -115,13 +130,20 @@ export default function App() {
 							padding: '0.25rem',
 						}}
 					>
-						{session.user.email}
+						{userData.display_name}
 					</h2>
 					<button onClick={signOut} style={styles.homepageButton} className="animate-1">
 						<KeyIcon />
 						SIGN OUT
 					</button>
 				</div>
+			) : (
+				<Link to={'login'}>
+					<button style={styles.homepageButton} className="animate-1">
+						<KeyIcon />
+						SIGN IN
+					</button>
+				</Link>
 			)}
 		</div>
 	)
